@@ -39,12 +39,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enum\RankyTpe.cs" />
-    <Compile Include="Enum\SuitType.cs" />
+    <Compile Include="Enums\RankyTpe.cs" />
+    <Compile Include="Enums\SuitType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reader\FileReader.cs" />
+    <Compile Include="Reader\FileTable.cs" />
+    <Compile Include="Reader\FileTableCell.cs" />
+    <Compile Include="TableCell.cs" />
+    <Compile Include="TableRange.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Reader\" />
+    <None Include="Configuration\RFI_UTG.csv" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

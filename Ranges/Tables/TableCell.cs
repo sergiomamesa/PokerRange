@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ranges
 {
-    public abstract class TableCell
+    public class TableCell
     {
         private RankType ColumnRankType;
         private RankType RowRankType;

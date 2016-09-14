@@ -1,0 +1,6 @@
+C:\Users\Sergio\Documents\Visual Studio 2013\Projects\PokerRanges\ConsoleApplication\bin\Debug\ConsoleApplication.exe.config
+C:\Users\Sergio\Documents\Visual Studio 2013\Projects\PokerRanges\ConsoleApplication\bin\Debug\ConsoleApplication.exe
+C:\Users\Sergio\Documents\Visual Studio 2013\Projects\PokerRanges\ConsoleApplication\bin\Debug\ConsoleApplication.pdb
+C:\Users\Sergio\Documents\Visual Studio 2013\Projects\PokerRanges\ConsoleApplication\obj\Debug\ConsoleApplication.csprojResolveAssemblyReference.cache
+C:\Users\Sergio\Documents\Visual Studio 2013\Projects\PokerRanges\ConsoleApplication\obj\Debug\ConsoleApplication.exe
+C:\Users\Sergio\Documents\Visual Studio 2013\Projects\PokerRanges\ConsoleApplication\obj\Debug\ConsoleApplication.pdb

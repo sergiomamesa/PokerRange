@@ -32,7 +32,11 @@ namespace Poker.Logic
             seat.Player.Hand = hand;
         }
 
+        public ActionType Run()
+        {
 
 
+            throw new NotImplementedException();
+        }
     }
 }

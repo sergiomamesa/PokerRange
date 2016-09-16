@@ -48,9 +48,11 @@
     <Compile Include="Tables\TableCell.cs" />
     <Compile Include="Tables\TableRange.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="Configuration\RFI_UTG.csv" />
+    <Folder Include="Configuration\FacingRaise\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Configuration\RFI\UTG.csv" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -47,7 +47,7 @@ namespace RangePoker.Specs
         [When]
         public void WhenActionReachesHero()
         {
-            
+            Scenario.Run();
         }
         
         [Then]

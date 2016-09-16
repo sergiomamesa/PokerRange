@@ -1,4 +1,4 @@
-﻿using Ranges.Enums;
+﻿using Poker.Model.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +12,7 @@ namespace Ranges
         private RankType ColumnRankType;
         private RankType RowRankType;
         private bool IsSuited;
+        public ActionType Action;
 
         public TableCell(RankType columnRankType, RankType rowRankType, bool isSuited)
         {

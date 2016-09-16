@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Poker.Model.Enums;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,11 +25,13 @@ namespace Ranges.Reader
                 var columnIterator = 0;
                 foreach (var value in line.Split(','))
                 {
-                    fileTable.Cells.Add(new FileTableCell((Enums.RankType)columnIterator, (Enums.RankType)rowIterator, value));
+                    fileTable.Cells.Add(new FileTableCell((RankType)columnIterator, (RankType)rowIterator, value));
                     columnIterator++;
                 }
                 rowIterator++;
             }
+
+
         }
     }
 }

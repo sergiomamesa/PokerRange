@@ -1,5 +1,6 @@
 ﻿using Poker.Model;
 using Poker.Model.Enums;
+using Poker.Ranges.Parser;
 using Poker.Ranges.Reader;
 using Ranges.Reader;
 using System;
@@ -46,12 +47,12 @@ namespace Poker.Logic
             return SituationType.RaiseFirstIn;    
         }
 
-        public ActionType Run()
-        {
-            var fileReader = new FileReaderFactory().CreateInstance(Situation, HeroPosition);
-
-
-        }
+        //public ActionType Run()
+        //{
+        //    var parser = new ActionParser();
+        //    var fileReader = new FileReaderFactory().CreateInstance(Situation, HeroPosition);
+            
+        //}
 
     }
 }

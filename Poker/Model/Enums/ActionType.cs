@@ -4,6 +4,7 @@
     {
         Fold,
         CallOrFold,
+        Limp,
         Call,
         CallOrRaise,
         Raise,

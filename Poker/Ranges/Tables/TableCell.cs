@@ -14,11 +14,12 @@ namespace Ranges
         private bool IsSuited;
         public ActionType Action;
 
-        public TableCell(RankType columnRankType, RankType rowRankType, bool isSuited)
+        public TableCell(RankType columnRankType, RankType rowRankType, bool isSuited, ActionType actionType)
         {
             ColumnRankType = columnRankType;
             RowRankType = rowRankType;
             IsSuited = isSuited;
+            Action = actionType;
         }
     }
 }

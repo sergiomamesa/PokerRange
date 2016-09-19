@@ -15,25 +15,5 @@ namespace Ranges
         {
             Cells = new List<TableCell>();
         }
-
-        public static TableRange Empty()
-        {
-            var tableRange = new TableRange();
-
-            var rowIterator = 1;
-            foreach (RankType rowRank in Enum.GetValues(typeof(RankType)))
-            {
-                var columnIterator = 0;
-                foreach (RankType columnRank in Enum.GetValues(typeof(RankType)))
-                {
-                    var isSuited = columnIterator >= rowIterator;
-                    tableRange.Cells.Add(new TableCell(columnRank, rowRank, isSuited));
-                    columnIterator++;
-                }
-                rowIterator++;
-            }
-
-            return tableRange;
-        }
     }
 }

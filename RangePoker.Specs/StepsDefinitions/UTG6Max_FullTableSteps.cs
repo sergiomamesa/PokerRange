@@ -1,4 +1,5 @@
-﻿using Poker.Logic;
+﻿using NUnit.Framework;
+using Poker.Logic;
 using Poker.Model;
 using Poker.Model.Enums;
 using System;
@@ -9,36 +10,32 @@ namespace RangePoker.Specs
     [Binding]
     public class UTG6Max_FullTableSteps
     {
-
         ScenarioGenerator Scenario;
+        ActionType ActionType;
 
         [Given]
         public void GivenASixMaxPlayerTable()
         {
-            Scenario = new ScenarioGenerator(Poker.Model.Enums.TableType.SixMax);
+            Scenario = new ScenarioGenerator(TableType.SixMax);
         }
         
         [Given]
         public void GivenTableIsFull()
         {
-
+            //No empty seats
         }
         
         [Given]
         public void GivenHeroIsUTG()
         {
-            Scenario.SetHeroPosition(Poker.Model.Enums.PositionType.LoJack);
+            Scenario.SetHeroPosition(PositionType.LoJack);
         }
         
         [Given]
         public void GivenHeroHas_P0(int leftCardSuit, int leftCardRank, int rightCardSuit, int rightCardRank)
         {
-            //var leftCard = new Card(Poker.Model.Enums.SuitType.Clubs, Poker.Model.Enums.RankType.Ace);
-            //var rightCard = new Card(Poker.Model.Enums.SuitType.Diamonds, Poker.Model.Enums.RankType.Ace);
-
             var leftCard = new Card((SuitType)leftCardSuit, (RankType)leftCardRank);
             var rightCard = new Card((SuitType)rightCardSuit, (RankType)rightCardRank);
-
             var hand = new Hand(leftCard, rightCard);
 
             Scenario.SetHeroHand(hand);
@@ -47,13 +44,13 @@ namespace RangePoker.Specs
         [When]
         public void WhenActionReachesHero()
         {
-            Scenario.Run();
+            ActionType = Scenario.Run();
         }
         
         [Then]
         public void ThenHeroIsToldTheActionToTake()
         {
-            
+            Assert.AreEqual(ActionType, ActionType.Fold);
         }
     }
 }

@@ -44,7 +44,6 @@
     <Compile Include="Logic\TableFactory.cs" />
     <Compile Include="Model\Board.cs" />
     <Compile Include="Model\Card.cs" />
-    <Compile Include="Model\Dealer.cs" />
     <Compile Include="Model\Deck.cs" />
     <Compile Include="Model\Enums\ActionType.cs" />
     <Compile Include="Model\Enums\BoardStateType.cs" />
@@ -63,8 +62,6 @@
     <Compile Include="Ranges\Parser\ActionParser.cs" />
     <Compile Include="Ranges\Reader\FileReader.cs" />
     <Compile Include="Ranges\Reader\FileReaderFactory.cs" />
-    <Compile Include="Ranges\Reader\FileTable.cs" />
-    <Compile Include="Ranges\Reader\FileTableCell.cs" />
     <Compile Include="Ranges\Tables\TableCell.cs" />
     <Compile Include="Ranges\Tables\TableRange.cs" />
   </ItemGroup>

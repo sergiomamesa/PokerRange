@@ -8,8 +8,7 @@ namespace Poker.Model
 {
     public class Dealer
     {
-        public Table Table { get; set; }
-        public Deck Deck { get; set; }
+
 
         public Dealer(Table table, Deck deck)
         {

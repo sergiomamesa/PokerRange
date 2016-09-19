@@ -10,31 +10,28 @@ namespace Poker.Logic
 {
     public class ScenarioGenerator
     {
-        public Dealer Dealer { get; set; }
+        public Table Table { get; set; }
+        public Deck Deck = new Deck();
 
-        public ScenarioGenerator(TableType type)
+        public ScenarioGenerator(TableType tableType)
         {
-            var table = new TableFactory().CreateInstance(type);
-            var deck = new Deck();
-
-            Dealer = new Dealer(table, deck);
+            Table = new TableFactory().CreateInstance(tableType);
         }
 
         public void SetHeroPosition(PositionType position)
         {
-            var seat = Dealer.Table.Seats.FirstOrDefault(i => i.PositionType == position);
+            var seat = Table.Seats.FirstOrDefault(i => i.PositionType == position);
             seat.Player.IsHero = true;
         }
 
         public void SetHeroHand(Hand hand)
         {
-            var seat = Dealer.Table.Seats.FirstOrDefault(s => s.Player.IsHero);
+            var seat = Table.Seats.FirstOrDefault(s => s.Player.IsHero);
             seat.Player.Hand = hand;
         }
 
         public ActionType Run()
         {
-
 
             throw new NotImplementedException();
         }

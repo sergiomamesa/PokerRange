@@ -1,4 +1,5 @@
 ﻿using Poker.Model.Enums;
+using Poker.Ranges.Parser;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,28 +11,32 @@ namespace Ranges.Reader
 {
     public class FileReader
     {
-        public List<TableCell> Cells;
+        private string FileName { get; set; }
 
         public FileReader(string fileName)
         {
-            var tableRange = new TableRange();
+            FileName = fileName;
+        }
 
-            var lines = File.ReadAllLines(fileName);
+        public TableRange GetRange(ActionParser parser)
+        {
+            var table = new TableRange();
 
-            var fileTable = new FileTable();
+            var lines = File.ReadAllLines(FileName);
             var rowIterator = 0;
             foreach (var line in lines)
             {
                 var columnIterator = 0;
                 foreach (var value in line.Split(','))
                 {
-                    fileTable.Cells.Add(new FileTableCell((RankType)columnIterator, (RankType)rowIterator, value));
+                    var isSuited = columnIterator >= rowIterator;
+                    table.Cells.Add(new TableCell((RankType)columnIterator, (RankType)rowIterator, isSuited, parser.Parse(value)));
                     columnIterator++;
                 }
                 rowIterator++;
             }
 
-
+            return table;
         }
     }
 }

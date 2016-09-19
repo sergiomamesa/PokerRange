@@ -8,6 +8,6 @@ Scenario: Hero is UTG - full table
 	Given a six-max player table
 	And table is full
 	And Hero is UTG
-	And Hero has 1, 1, 2, 1
+	And Hero has 0, 0, 0, 1
 	When Action reaches Hero
 	Then Hero is told the action to take

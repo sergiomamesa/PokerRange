@@ -14,13 +14,22 @@ namespace Poker.Logic
 {
     public class DecisionMaker
     {
-        private PositionType HeroPosition;
         private List<ActionEvent> ActionEventList;
+        private PositionType HeroPosition;
 
         public DecisionMaker(List<ActionEvent> actionEventList)
         {
             ActionEventList = actionEventList;
-            HeroPosition = (PositionType)(ActionEventList.LastOrDefault().Position + 1);
+            SetHeroPosition();
+        }
+
+        private void SetHeroPosition()
+        {
+            var lastAction = ActionEventList.LastOrDefault();
+            if (lastAction == null)
+                HeroPosition = 0;
+            else
+                HeroPosition = (PositionType)(ActionEventList.LastOrDefault().Position + 1);
         }
 
         private SituationType CalculateSituation()
@@ -40,10 +49,8 @@ namespace Poker.Logic
         public ActionType Run(Hand heroHand)
         {
             var situation = CalculateSituation();
-            var parser = new ActionParser();
             var fileReader = new FileReaderFactory().CreateInstance(situation, HeroPosition);
-
-            var tableRange = fileReader.GetRange(parser);
+            var tableRange = fileReader.GetRange(new ActionParser());
 
             return tableRange.GetAction(heroHand);
         }

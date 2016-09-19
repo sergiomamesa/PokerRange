@@ -19,3 +19,6 @@ C:\Users\mrosa\Source\Repos\PokerRange\ConsoleApplication\bin\Debug\ConsoleAppli
 C:\Users\mrosa\Source\Repos\PokerRange\ConsoleApplication\obj\Debug\ConsoleApplication.csprojResolveAssemblyReference.cache
 C:\Users\mrosa\Source\Repos\PokerRange\ConsoleApplication\obj\Debug\ConsoleApplication.exe
 C:\Users\mrosa\Source\Repos\PokerRange\ConsoleApplication\obj\Debug\ConsoleApplication.pdb
+C:\Users\Sergio\Source\Repos\PokerRange\ConsoleApplication\bin\Debug\ConsoleApplication.exe
+C:\Users\Sergio\Source\Repos\PokerRange\ConsoleApplication\bin\Debug\ConsoleApplication.pdb
+C:\Users\Sergio\Source\Repos\PokerRange\ConsoleApplication\obj\Debug\ConsoleApplication.csprojResolveAssemblyReference.cache

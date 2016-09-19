@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace Poker.Ranges.Reader
 {
@@ -12,16 +13,18 @@ namespace Poker.Ranges.Reader
     {
         public FileReader CreateInstance(SituationType situation, PositionType heroPosition, PositionType villainPosition = PositionType.BigBlind)
         {
+            var filesPath = ConfigurationManager.AppSettings["RANGES_FILES"];
+
             if (situation == SituationType.RaiseFirstIn)
-                return new FileReader(String.Format("RFI/{0}.csv", heroPosition.ToString()));
+                return new FileReader(String.Format("{0}\\RFI\\{1}.csv", filesPath, heroPosition.ToString()));
 
             if (situation == SituationType.FacingRaise)
-                throw new NotImplementedException();
+                return new FileReader(String.Format("{0}\\FacingRaise\\{1}_{2}.csv", filesPath, heroPosition.ToString()), villainPosition.ToString());
 
             if (situation == SituationType.RFIvs3Bet)
-                throw new NotImplementedException();
+                return new FileReader(String.Format("{0}\\RFIvs3Bet\\{1}_{2}.csv", filesPath, heroPosition.ToString()), villainPosition.ToString());
 
-            throw new NotImplementedException();
+            throw new Exception("Not valid SituationType");
         }
     }
 }

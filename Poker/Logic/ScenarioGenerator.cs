@@ -12,10 +12,14 @@ namespace Poker.Logic
     {
         public Table Table { get; set; }
         public Deck Deck = new Deck();
+        private List<ActionEvent> ActionEventList { get; set; }
+        public BoardStateType BoardState { get; set; }
 
         public ScenarioGenerator(TableType tableType)
         {
             Table = new TableFactory().CreateInstance(tableType);
+            BoardState = BoardStateType.Preflop;
+            ActionEventList = new List<ActionEvent>();
         }
 
         public void SetHeroPosition(PositionType position)
@@ -30,11 +34,17 @@ namespace Poker.Logic
             seat.Player.Hand = hand;
         }
 
+        public void AddAction(PositionType position, ActionType action)
+        {
+            ActionEventList.Add(new ActionEvent(position, action));
+        }
+
         public ActionType Run()
         {
-            var decisicionMaker = new DecisionMaker(Table.Seats);
-            
-            throw new NotImplementedException();
+            var decisionMaker = new DecisionMaker(ActionEventList);
+            var heroHand = Table.Seats.FirstOrDefault(s => s.Player.IsHero).Player.Hand;
+
+            return decisionMaker.Run(heroHand);
         }
     }
 }

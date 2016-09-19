@@ -76,20 +76,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\UTG6max_NoUTGplusOne.feature.cs">
+    <Compile Include="Features\UTG6max_FullTable.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UTG6max_NoUTGplusOne.feature</DependentUpon>
+      <DependentUpon>UTG6max_FullTable.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StepsDefinitions\UTG6Max_FullTableSteps.cs" />
-    <Compile Include="StepsDefinitions\UTG6Max_NoUTGplusOneSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Features\UTG6max_NoUTGplusOne.feature">
+    <None Include="Features\UTG6max_FullTable.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>UTG6max_NoUTGplusOne.feature.cs</LastGenOutput>
+      <LastGenOutput>UTG6max_FullTable.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -102,6 +101,7 @@
       <Name>Poker</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

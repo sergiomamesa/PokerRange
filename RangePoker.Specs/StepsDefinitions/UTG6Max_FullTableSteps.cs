@@ -5,7 +5,7 @@ using Poker.Model.Enums;
 using System;
 using TechTalk.SpecFlow;
 
-namespace RangePoker.Specs
+namespace RangePoker.Specs.StepsDefinitions
 {
     [Binding]
     public class UTG6Max_FullTableSteps
@@ -22,9 +22,9 @@ namespace RangePoker.Specs
         [Given]
         public void GivenTableIsFull()
         {
-            //No empty seats
+            //No empty seats. Table is full by default.
         }
-        
+
         [Given]
         public void GivenHeroIsUTG()
         {
@@ -32,10 +32,10 @@ namespace RangePoker.Specs
         }
         
         [Given]
-        public void GivenHeroHas_P0(int leftCardSuit, int leftCardRank, int rightCardSuit, int rightCardRank)
+        public void GivenHeroHas_P0__P1__P2__P3(int p0, int p1, int p2, int p3)
         {
-            var leftCard = new Card((SuitType)leftCardSuit, (RankType)leftCardRank);
-            var rightCard = new Card((SuitType)rightCardSuit, (RankType)rightCardRank);
+            var leftCard = new Card((SuitType)p0, (RankType)p1);
+            var rightCard = new Card((SuitType)p2, (RankType)p2);
             var hand = new Hand(leftCard, rightCard);
 
             Scenario.SetHeroHand(hand);
@@ -50,7 +50,7 @@ namespace RangePoker.Specs
         [Then]
         public void ThenHeroIsToldTheActionToTake()
         {
-            Assert.AreEqual(ActionType, ActionType.Fold);
+            Assert.AreEqual(ActionType, ActionType.Raise);
         }
     }
 }

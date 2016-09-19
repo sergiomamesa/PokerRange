@@ -1,13 +1,13 @@
-﻿Feature: UTG6max_NoUTGplusOne
+﻿Feature: UTG6max_FullTable
 	In order to know what action to take in a 6-max full table
 	As a UTG Positioned player
 	I want to be told the action
 
 @UTG6max
-Scenario: Hero is UTG - UTG plus one is empty
-	Given a six-max player table not full
-	And UTG plus one is empty
+Scenario: Hero is UTG - full table
+	Given a six-max player table
+	And table is full
 	And Hero is UTG
-	And Hero has "specific hand"
+	And Hero has 1, 1, 2, 1
 	When Action reaches Hero
 	Then Hero is told the action to take

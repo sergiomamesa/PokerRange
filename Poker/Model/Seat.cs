@@ -11,8 +11,7 @@ namespace Poker.Model
     {
         public Player Player { get; set; }
         public PositionType PositionType { get; set; }
-        public ActionType Action { get; set; }
-
+        
         public Seat(PositionType positionType)
         {
             PositionType = positionType;

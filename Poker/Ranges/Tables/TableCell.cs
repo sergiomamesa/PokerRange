@@ -9,9 +9,9 @@ namespace Ranges
 {
     public class TableCell
     {
-        private RankType ColumnRankType;
-        private RankType RowRankType;
-        private bool IsSuited;
+        public RankType ColumnRankType;
+        public RankType RowRankType;
+        public bool IsSuited;
         public ActionType Action;
 
         public TableCell(RankType columnRankType, RankType rowRankType, bool isSuited, ActionType actionType)

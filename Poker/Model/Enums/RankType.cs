@@ -2,19 +2,19 @@
 {
     public enum RankType
     {
-        Two = 0,
-        Three,
-        Four,
-        Five,
-        Six,
-        Seven,
-        Eight,
-        Nine,
-        Ten,
-        Jack,
-        Queen,
+        Ace = 0,
         King,
-        Ace
+        Queen,
+        Jack,
+        Ten,
+        Nine,
+        Eight,
+        Seven,
+        Six,
+        Five,
+        Four,
+        Three,
+        Two
     }
 
 }

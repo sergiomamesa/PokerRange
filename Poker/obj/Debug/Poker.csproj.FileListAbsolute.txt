@@ -1,10 +1,9 @@
-C:\Users\mrosa\Source\Repos\PokerRange\Poker\obj\Debug\Poker.csprojResolveAssemblyReference.cache
-C:\Users\mrosa\Source\Repos\PokerRange\Poker\bin\Debug\Poker.dll
-C:\Users\mrosa\Source\Repos\PokerRange\Poker\bin\Debug\Poker.pdb
-C:\Users\mrosa\Source\Repos\PokerRange\Poker\obj\Debug\Poker.dll
-C:\Users\mrosa\Source\Repos\PokerRange\Poker\obj\Debug\Poker.pdb
 C:\Users\manur\Source\Repos\PokerRange\Poker\obj\Debug\Poker.csprojResolveAssemblyReference.cache
 C:\Users\manur\Source\Repos\PokerRange\Poker\bin\Debug\Poker.dll
 C:\Users\manur\Source\Repos\PokerRange\Poker\bin\Debug\Poker.pdb
 C:\Users\manur\Source\Repos\PokerRange\Poker\obj\Debug\Poker.dll
 C:\Users\manur\Source\Repos\PokerRange\Poker\obj\Debug\Poker.pdb
+C:\Users\mrosa\Source\Repos\PokerRange\Poker\bin\Debug\Poker.dll
+C:\Users\mrosa\Source\Repos\PokerRange\Poker\bin\Debug\Poker.pdb
+C:\Users\mrosa\Source\Repos\PokerRange\Poker\obj\Debug\Poker.dll
+C:\Users\mrosa\Source\Repos\PokerRange\Poker\obj\Debug\Poker.pdb

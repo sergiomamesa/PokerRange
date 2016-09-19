@@ -1,4 +1,5 @@
 ﻿using Poker.Model;
+using Poker.Extensions;
 using Poker.Model.Enums;
 using Poker.Ranges.Parser;
 using Poker.Ranges.Reader;
@@ -14,43 +15,37 @@ namespace Poker.Logic
     public class DecisionMaker
     {
         private PositionType HeroPosition;
-        private List<Seat> BeforeHero;
-        private List<Seat> AfterHero;
-        private SituationType Situation;
+        private List<ActionEvent> ActionEventList;
 
-        public DecisionMaker(List<Seat> tableSeats)
+        public DecisionMaker(List<ActionEvent> actionEventList)
         {
-            SetPlayers(tableSeats);
-            SetHeroPosition();
-            Situation = GetSituation();
+            ActionEventList = actionEventList;
+            HeroPosition = (PositionType)(ActionEventList.LastOrDefault().Position + 1);
         }
 
-        private void SetPlayers(List<Seat> allSeats)
+        private SituationType CalculateSituation()
         {
-            BeforeHero = allSeats.TakeWhile(s => s.Player.IsHero).ToList();
-            AfterHero = allSeats.SkipWhile(s => s.Player.IsHero).Skip(1).ToList();
-        }
-
-        private void SetHeroPosition()
-        {
-            HeroPosition = (PositionType)(BeforeHero.Last().PositionType + 1);
-        }
-
-        private SituationType GetSituation()
-        {
-            if (AfterHero.Any(s => s.Action == ActionType.Raise))
+            if (ActionEventList.Where(a => a.Action == ActionType.Raise).Any(p => p.Position == HeroPosition))
                 return SituationType.RFIvs3Bet;
-            
-            if (BeforeHero.Any(s => s.Action == ActionType.Raise))
+
+            if (ActionEventList.None(a => a.Action == ActionType.Raise))
+                return SituationType.RaiseFirstIn;
+
+            if (ActionEventList.IsOne(a => a.Action == ActionType.Raise))
                 return SituationType.FacingRaise;
 
-            return SituationType.RaiseFirstIn;    
+            throw new NotImplementedException();
         }
 
-        //public ActionType Run()
-        //{
-        //    var parser = new ActionParser();
-        //    var fileReader = new FileReaderFactory().CreateInstance(Situation, HeroPosition);
-        //}
+        public ActionType Run(Hand heroHand)
+        {
+            var situation = CalculateSituation();
+            var parser = new ActionParser();
+            var fileReader = new FileReaderFactory().CreateInstance(situation, HeroPosition);
+
+            var tableRange = fileReader.GetRange(parser);
+
+            return tableRange.GetAction(heroHand);
+        }
     }
 }

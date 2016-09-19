@@ -10,7 +10,7 @@ namespace Poker.Ranges.Reader
 {
     public class FileReaderFactory
     {
-        public FileReader CreateInstance(SituationType situation, PositionType heroPosition, PositionType villianPosition = PositionType.BigBlind)
+        public FileReader CreateInstance(SituationType situation, PositionType heroPosition, PositionType villainPosition = PositionType.BigBlind)
         {
             if (situation == SituationType.RaiseFirstIn)
                 return new FileReader(String.Format("RFI/{0}.csv", heroPosition.ToString()));

@@ -16,5 +16,13 @@ namespace Poker.Model
             LeftCard = leftCard;
             RightCard = rightCard;
         }
+
+        public bool IsSuited()
+        {
+            if (LeftCard.Suit == RightCard.Suit)
+                return true;
+
+            return false;
+        }
     }
 }

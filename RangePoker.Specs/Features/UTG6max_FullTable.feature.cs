@@ -13,78 +13,78 @@
 namespace RangePoker.Specs.Features
 {
     using TechTalk.SpecFlow;
-
-
+    
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("UTG6max_NoUTGplusOne")]
-    public partial class UTG6Max_NoUTGplusOneFeature
+    [NUnit.Framework.DescriptionAttribute("UTG6max_FullTable")]
+    public partial class UTG6Max_FullTableFeature
     {
-
+        
         private TechTalk.SpecFlow.ITestRunner testRunner;
-
-#line 1 "UTG6max_NoUTGplusOne.feature"
+        
+#line 1 "UTG6max_FullTable.feature"
 #line hidden
-
+        
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "UTG6max_NoUTGplusOne", "\tIn order to know what action to take in a 6-max full table\r\n\tAs a UTG Positioned" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "UTG6max_FullTable", "\tIn order to know what action to take in a 6-max full table\r\n\tAs a UTG Positioned" +
                     " player\r\n\tI want to be told the action", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
-
+        
         [NUnit.Framework.TestFixtureTearDownAttribute()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
-
+        
         [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
-
+        
         [NUnit.Framework.TearDownAttribute()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
         }
-
+        
         public virtual void ScenarioSetup(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioStart(scenarioInfo);
         }
-
+        
         public virtual void ScenarioCleanup()
         {
             testRunner.CollectScenarioErrors();
         }
-
+        
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Hero is UTG - UTG plus one is empty")]
+        [NUnit.Framework.DescriptionAttribute("Hero is UTG - full table")]
         [NUnit.Framework.CategoryAttribute("UTG6max")]
-        public virtual void HeroIsUTG_UTGPlusOneIsEmpty()
+        public virtual void HeroIsUTG_FullTable()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Hero is UTG - UTG plus one is empty", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Hero is UTG - full table", new string[] {
                         "UTG6max"});
 #line 7
-            this.ScenarioSetup(scenarioInfo);
+this.ScenarioSetup(scenarioInfo);
 #line 8
-            testRunner.Given("a six-max player table not full", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("a six-max player table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
-            testRunner.And("UTG plus one is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("table is full", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
-            testRunner.And("Hero is UTG", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Hero is UTG", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
-            testRunner.And("Hero has \"specific hand\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Hero has 1, 1, 2, 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
-            testRunner.When("Action reaches Hero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Action reaches Hero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
-            testRunner.Then("Hero is told the action to take", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Hero is told the action to take", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

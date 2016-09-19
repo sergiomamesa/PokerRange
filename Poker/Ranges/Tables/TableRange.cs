@@ -1,4 +1,5 @@
-﻿using Poker.Model.Enums;
+﻿using Poker.Model;
+using Poker.Model.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,16 @@ namespace Ranges
         public TableRange()
         {
             Cells = new List<TableCell>();
+        }
+
+        public ActionType GetAction(Hand hand)
+        {
+            var leftRank = hand.LeftCard.Rank;
+            var rightRank = hand.RightCard.Rank;
+
+            var currentCell = Cells.FirstOrDefault(c => c.ColumnRankType == leftRank && c.RowRankType == rightRank && c.IsSuited == hand.IsSuited());
+
+            return currentCell.Action;
         }
     }
 }

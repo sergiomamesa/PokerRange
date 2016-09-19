@@ -54,6 +54,7 @@
     <Compile Include="Model\Enums\SuitType.cs" />
     <Compile Include="Model\Enums\TableType.cs" />
     <Compile Include="Model\Hand.cs" />
+    <Compile Include="Model\ActionEvent.cs" />
     <Compile Include="Model\Player.cs" />
     <Compile Include="Logic\ScenarioGenerator.cs" />
     <Compile Include="Model\Seat.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Ranges\Reader\FileReaderFactory.cs" />
     <Compile Include="Ranges\Tables\TableCell.cs" />
     <Compile Include="Ranges\Tables\TableRange.cs" />
+    <Compile Include="Extensions\ExtensionMethods.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Ranges\Configuration\RFI\UTG.csv" />

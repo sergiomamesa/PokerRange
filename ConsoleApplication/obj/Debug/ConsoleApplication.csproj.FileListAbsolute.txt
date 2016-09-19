@@ -4,12 +4,6 @@ C:\Users\Sergio\Documents\Visual Studio 2013\Projects\PokerRanges\ConsoleApplica
 C:\Users\Sergio\Documents\Visual Studio 2013\Projects\PokerRanges\ConsoleApplication\obj\Debug\ConsoleApplication.csprojResolveAssemblyReference.cache
 C:\Users\Sergio\Documents\Visual Studio 2013\Projects\PokerRanges\ConsoleApplication\obj\Debug\ConsoleApplication.exe
 C:\Users\Sergio\Documents\Visual Studio 2013\Projects\PokerRanges\ConsoleApplication\obj\Debug\ConsoleApplication.pdb
-C:\Users\mrosa\Source\Repos\PokerRange\ConsoleApplication\bin\Debug\ConsoleApplication.exe.config
-C:\Users\mrosa\Source\Repos\PokerRange\ConsoleApplication\bin\Debug\ConsoleApplication.exe
-C:\Users\mrosa\Source\Repos\PokerRange\ConsoleApplication\bin\Debug\ConsoleApplication.pdb
-C:\Users\mrosa\Source\Repos\PokerRange\ConsoleApplication\obj\Debug\ConsoleApplication.csprojResolveAssemblyReference.cache
-C:\Users\mrosa\Source\Repos\PokerRange\ConsoleApplication\obj\Debug\ConsoleApplication.exe
-C:\Users\mrosa\Source\Repos\PokerRange\ConsoleApplication\obj\Debug\ConsoleApplication.pdb
 C:\Users\manur\Source\Repos\PokerRange\ConsoleApplication\bin\Debug\ConsoleApplication.exe.config
 C:\Users\manur\Source\Repos\PokerRange\ConsoleApplication\bin\Debug\ConsoleApplication.exe
 C:\Users\manur\Source\Repos\PokerRange\ConsoleApplication\bin\Debug\ConsoleApplication.pdb
@@ -19,3 +13,9 @@ C:\Users\manur\Source\Repos\PokerRange\ConsoleApplication\obj\Debug\ConsoleAppli
 C:\Users\sergio\Source\Repos\PokerRange\ConsoleApplication\bin\Debug\ConsoleApplication.exe.config
 C:\Users\sergio\Source\Repos\PokerRange\ConsoleApplication\obj\Debug\ConsoleApplication.exe
 C:\Users\sergio\Source\Repos\PokerRange\ConsoleApplication\obj\Debug\ConsoleApplication.pdb
+C:\Users\mrosa\Source\Repos\PokerRange\ConsoleApplication\bin\Debug\ConsoleApplication.exe.config
+C:\Users\mrosa\Source\Repos\PokerRange\ConsoleApplication\bin\Debug\ConsoleApplication.exe
+C:\Users\mrosa\Source\Repos\PokerRange\ConsoleApplication\bin\Debug\ConsoleApplication.pdb
+C:\Users\mrosa\Source\Repos\PokerRange\ConsoleApplication\obj\Debug\ConsoleApplication.csprojResolveAssemblyReference.cache
+C:\Users\mrosa\Source\Repos\PokerRange\ConsoleApplication\obj\Debug\ConsoleApplication.exe
+C:\Users\mrosa\Source\Repos\PokerRange\ConsoleApplication\obj\Debug\ConsoleApplication.pdb

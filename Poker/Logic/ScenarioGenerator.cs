@@ -32,7 +32,8 @@ namespace Poker.Logic
 
         public ActionType Run()
         {
-
+            var decisicionMaker = new DecisionMaker(Table.Seats);
+            
             throw new NotImplementedException();
         }
     }

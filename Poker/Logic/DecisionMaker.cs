@@ -51,8 +51,6 @@ namespace Poker.Logic
         //{
         //    var parser = new ActionParser();
         //    var fileReader = new FileReaderFactory().CreateInstance(Situation, HeroPosition);
-            
         //}
-
     }
 }

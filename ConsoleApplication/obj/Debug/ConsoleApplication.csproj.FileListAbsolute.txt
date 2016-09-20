@@ -22,3 +22,5 @@ C:\Users\mrosa\Source\Repos\PokerRange\ConsoleApplication\obj\Debug\ConsoleAppli
 C:\Users\Sergio\Source\Repos\PokerRange\ConsoleApplication\bin\Debug\ConsoleApplication.exe
 C:\Users\Sergio\Source\Repos\PokerRange\ConsoleApplication\bin\Debug\ConsoleApplication.pdb
 C:\Users\Sergio\Source\Repos\PokerRange\ConsoleApplication\obj\Debug\ConsoleApplication.csprojResolveAssemblyReference.cache
+C:\Users\mrosa\Source\Repos\PokerRange\ConsoleApplication\bin\Debug\ConsoleApplication.exe.CodeAnalysisLog.xml
+C:\Users\mrosa\Source\Repos\PokerRange\ConsoleApplication\bin\Debug\ConsoleApplication.exe.lastcodeanalysissucceeded

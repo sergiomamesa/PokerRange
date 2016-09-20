@@ -2,14 +2,14 @@
 {
     public enum PositionType
     {
-        UTG = 0,
-        UTGplus1,
-        UTGplus2,
-        LoJack,
-        HiJack,
-        CutOff,
-        Button,
+        BigBlind = 0,
         SmallBlind,
-        BigBlind
+        Button,
+        CutOff,
+        HiJack,
+        LoJack,
+        UTGplus2,
+        UTGplus1,
+        UTG
     }
 }

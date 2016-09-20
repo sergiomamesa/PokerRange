@@ -1,0 +1,12 @@
+C:\Users\mrosa\Source\Repos\PokerRange\PokerTest\bin\Debug\PokerTest.dll
+C:\Users\mrosa\Source\Repos\PokerRange\PokerTest\bin\Debug\PokerTest.pdb
+C:\Users\mrosa\Source\Repos\PokerRange\PokerTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\mrosa\Source\Repos\PokerRange\PokerTest\bin\Debug\nunit.framework.dll
+C:\Users\mrosa\Source\Repos\PokerRange\PokerTest\bin\Debug\Poker.dll
+C:\Users\mrosa\Source\Repos\PokerRange\PokerTest\bin\Debug\Poker.pdb
+C:\Users\mrosa\Source\Repos\PokerRange\PokerTest\bin\Debug\nunit.framework.xml
+C:\Users\mrosa\Source\Repos\PokerRange\PokerTest\obj\Debug\PokerTest.csprojResolveAssemblyReference.cache
+C:\Users\mrosa\Source\Repos\PokerRange\PokerTest\obj\Debug\PokerTest.dll
+C:\Users\mrosa\Source\Repos\PokerRange\PokerTest\obj\Debug\PokerTest.pdb
+C:\Users\mrosa\Source\Repos\PokerRange\PokerTest\bin\Debug\PokerTest.dll.CodeAnalysisLog.xml
+C:\Users\mrosa\Source\Repos\PokerRange\PokerTest\bin\Debug\PokerTest.dll.lastcodeanalysissucceeded

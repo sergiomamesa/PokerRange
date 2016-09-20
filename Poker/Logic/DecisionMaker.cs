@@ -25,7 +25,7 @@ namespace Poker.Logic
 
         private PositionType CalculateVillainPosition()
         {
-            throw new NotImplementedException();
+            return default(PositionType);
         }
 
         private SituationType CalculateSituation()

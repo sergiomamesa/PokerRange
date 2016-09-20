@@ -50,7 +50,7 @@ namespace RangePoker.Specs.StepsDefinitions
         [Then]
         public void ThenHeroIsToldTheActionToTake()
         {
-            Assert.AreEqual(ActionType, ActionType.Fold);
+            Assert.AreEqual(ActionType, ActionType.Raise);
         }
     }
 }

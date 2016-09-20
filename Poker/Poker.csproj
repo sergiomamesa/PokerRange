@@ -64,6 +64,7 @@
     <Compile Include="Ranges\Parser\ActionParser.cs" />
     <Compile Include="Ranges\Reader\FileReader.cs" />
     <Compile Include="Ranges\Reader\FileReaderFactory.cs" />
+    <Compile Include="Ranges\Reader\FileReaderFactoryParams.cs" />
     <Compile Include="Ranges\Tables\TableCell.cs" />
     <Compile Include="Ranges\Tables\TableRange.cs" />
     <Compile Include="Extensions\ExtensionMethods.cs" />

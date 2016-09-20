@@ -11,7 +11,6 @@ namespace Poker.Model
     {
         internal int SeatsNumber;
         internal List<Seat> Seats;
-        internal Board Board;
 
         public Table(int seatsNumber)
         {

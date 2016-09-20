@@ -1,4 +1,5 @@
-﻿using Poker.Model.Enums;
+﻿using Poker.Model;
+using Poker.Model.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,23 @@ namespace Ranges
             RowRankType = rowRankType;
             IsSuited = isSuited;
             Action = actionType;
+        }
+
+        public bool Find(Hand hand)
+        {
+            var leftRank = hand.LeftCard.Rank;
+            var rightRank = hand.RightCard.Rank;
+
+            if (this.ColumnRankType != leftRank)
+                return false;
+
+            if (this.RowRankType != rightRank)
+                return false;
+
+            if (this.IsSuited != hand.IsSuited())
+                return false;
+
+            return true;
         }
     }
 }

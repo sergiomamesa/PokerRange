@@ -19,11 +19,7 @@ namespace Ranges
 
         public ActionType GetAction(Hand hand)
         {
-            var leftRank = hand.LeftCard.Rank;
-            var rightRank = hand.RightCard.Rank;
-
-            //TODO: Refactor this too long line
-            var currentCell = Cells.FirstOrDefault(c => c.ColumnRankType == leftRank && c.RowRankType == rightRank && c.IsSuited == hand.IsSuited());
+            var currentCell = Cells.FirstOrDefault(c => c.Find(hand));
             return currentCell.Action;
         }
     }

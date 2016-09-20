@@ -14,7 +14,7 @@ namespace Poker.Logic
 {
     public class DecisionMaker
     {
-        private List<ActionEvent> ActionEventList;
+        private readonly List<ActionEvent> ActionEventList;
         private PositionType HeroPosition;
 
         public DecisionMaker(List<ActionEvent> actionEventList)
@@ -29,7 +29,7 @@ namespace Poker.Logic
             if (lastAction == null)
                 HeroPosition = 0;
             else
-                HeroPosition = (PositionType)(ActionEventList.LastOrDefault().Position + 1);
+                HeroPosition = ActionEventList.LastOrDefault().Position + 1;
         }
 
         private SituationType CalculateSituation()

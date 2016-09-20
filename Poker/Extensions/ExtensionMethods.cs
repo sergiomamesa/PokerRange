@@ -11,12 +11,12 @@ namespace Poker.Extensions
     {
         public static bool None<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> selector)
         {
-            return source.Where(selector).Count() == 0;
+            return !source.Any(selector);
         }
      
         public static bool IsOne<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> selector)
         {
-            return source.Where(selector).Count() == 1;
+            return source.Count(selector) == 1;
         }
     }
 }

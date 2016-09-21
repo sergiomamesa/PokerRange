@@ -28,35 +28,16 @@ namespace Ranges
             var leftRank = hand.LeftCard.Rank;
             var rightRank = hand.RightCard.Rank;
 
-            var found = true;
-            found = MatchColumnRow(rightRank, leftRank);
-
-            if (!found)
-                found = MatchColumnRow(leftRank, rightRank);
-
-            if (!found)
-                found = false;
-
-            if (IsSuited != hand.IsSuited())
-                found = false;
-
-            return found;
-        }
-
-        public bool MatchColumnRow(RankType columnRank, RankType rowRank)
-        {
-            if (ColumnRankType != columnRank)
+            if (this.ColumnRankType != leftRank)
                 return false;
 
-            if (RowRankType != rowRank)
+            if (this.RowRankType != rightRank)
+                return false;
+
+            if (this.IsSuited != hand.IsSuited())
                 return false;
 
             return true;
-        }
-
-        public override string ToString()
-        {
-            return String.Format("{0} {1} {2} {3}", ColumnRankType, RowRankType, IsSuited, Action);
         }
     }
 }

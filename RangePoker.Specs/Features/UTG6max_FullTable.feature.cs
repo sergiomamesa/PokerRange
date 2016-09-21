@@ -80,7 +80,7 @@ namespace RangePoker.Specs.Features
 #line 10
             testRunner.And("Hero is UTG", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
-            testRunner.And("Hero has 0, 0, 0, 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("Hero has 0, 0, 1, 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
             testRunner.When("Action reaches Hero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13

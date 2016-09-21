@@ -12,7 +12,7 @@ namespace Ranges
     {
         public List<TableCell> Cells;
 
-        public TableRange()
+        internal TableRange()
         {
             Cells = new List<TableCell>();
         }

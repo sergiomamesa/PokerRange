@@ -75,7 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Ranges\Configuration\RFI\LoJack.csv" />
+    <None Include="Ranges\Configuration\RFI\UTG.csv" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Ranges\Configuration\FacingRaise\" />

@@ -11,14 +11,20 @@ namespace RangePoker.Specs.StepsDefinitions
     public class UTG6Max_FullTableSteps
     {
         ScenarioGenerator Scenario;
-        ActionType ActionType;
+        ActionType HeroActionType;
 
         [Given]
         public void GivenASixMaxPlayerTable()
         {
             Scenario = new ScenarioGenerator(TableType.SixMax);
         }
-        
+
+        [Given]
+        public void GivenAFullRingPlayerTable()
+        {
+            Scenario = new ScenarioGenerator(TableType.FullRing);
+        }
+
         [Given]
         public void GivenTableIsFull()
         {
@@ -26,11 +32,23 @@ namespace RangePoker.Specs.StepsDefinitions
         }
 
         [Given]
+        public void GivenUTGPlusTwoRaises()
+        {
+            Scenario.AddAction(PositionType.UTGplus2, ActionType.Raise);
+        }
+
+        [Given]
         public void GivenHeroIsUTG()
         {
             Scenario.SetHeroPosition(PositionType.LoJack);
         }
-        
+
+        [Given]
+        public void GivenHeroIsBB()
+        {
+            Scenario.SetHeroPosition(PositionType.BigBlind);
+        }
+
         [Given]
         public void GivenHeroHas_P0__P1__P2__P3(int p0, int p1, int p2, int p3)
         {
@@ -44,13 +62,19 @@ namespace RangePoker.Specs.StepsDefinitions
         [When]
         public void WhenActionReachesHero()
         {
-            ActionType = Scenario.Run();
+            HeroActionType = Scenario.Run();
         }
         
+        //[Then]
+        //public void ThenHeroIsToldTheActionToTake()
+        //{
+        //    Assert.AreEqual(ActionType, ActionType.Raise);
+        //}
+
         [Then]
-        public void ThenHeroIsToldTheActionToTake()
+        public void ThenHeroIsToldToTakeAction_P0(int p0)
         {
-            Assert.AreEqual(ActionType, ActionType.Raise);
+            Assert.AreEqual(HeroActionType, (ActionType)p0);
         }
     }
 }

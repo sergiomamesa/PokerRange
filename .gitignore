@@ -3,7 +3,7 @@
 
 #Project-specific files
 Poker/Ranges/Configuration/
-#App.config
+App.config
 .vs/
 
 # User-specific files

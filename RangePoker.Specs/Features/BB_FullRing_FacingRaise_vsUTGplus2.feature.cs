@@ -18,21 +18,21 @@ namespace RangePoker.Specs.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("UTG6max_FullTable")]
-    public partial class UTG6Max_FullTableFeature
+    [NUnit.Framework.DescriptionAttribute("BB_FullRing_FacingRaise_vsUTGplus2")]
+    public partial class BB_FullRing_FacingRaise_VsUTGplus2Feature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "UTG6max_FullTable.feature"
+#line 1 "BB_FullRing_FacingRaise_vsUTGplus2.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "UTG6max_FullTable", "\tIn order to know what action to take in a 6-max full table\r\n\tAs a UTG Positioned" +
-                    " player\r\n\tI want to be told the action", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "BB_FullRing_FacingRaise_vsUTGplus2", "\tIn order to know what action to take in a 6-max full table\r\n\tAs a BB Positioned " +
+                    "player\r\n\tI want to be told the action", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -65,26 +65,28 @@ namespace RangePoker.Specs.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Hero is UTG - full table")]
-        [NUnit.Framework.CategoryAttribute("UTG6max")]
-        public virtual void HeroIsUTG_FullTable()
+        [NUnit.Framework.DescriptionAttribute("Hero is BB - full table")]
+        [NUnit.Framework.CategoryAttribute("mytag")]
+        public virtual void HeroIsBB_FullTable()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Hero is UTG - full table", new string[] {
-                        "UTG6max"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Hero is BB - full table", new string[] {
+                        "mytag"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given("a six-max player table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("a full ring player table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
  testRunner.And("table is full", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.And("Hero is UTG", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Hero is BB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.And("Hero has 0, 0, 1, 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Hero has 0, 1, 2, 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.When("Action reaches Hero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("UTG plus two raises", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
- testRunner.Then("Hero is told to take action 5", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("Action reaches Hero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
+ testRunner.Then("Hero is told to take action 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

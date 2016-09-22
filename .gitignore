@@ -4,6 +4,7 @@
 #Project-specific files
 Poker/Ranges/Configuration/
 #App.config
+.vs/
 
 # User-specific files
 *.suo
@@ -247,3 +248,5 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+*.rar
+*.csv

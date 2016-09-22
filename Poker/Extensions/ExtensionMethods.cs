@@ -18,5 +18,11 @@ namespace Poker.Extensions
         {
             return source.Count(selector) == 1;
         }
+
+        public static bool IsOne<TSource>(this IEnumerable<TSource> source)
+        {
+            return source.Count() == 1;
+        }
+
     }
 }

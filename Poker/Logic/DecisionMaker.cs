@@ -25,6 +25,10 @@ namespace Poker.Logic
 
         private PositionType CalculateVillainPosition()
         {
+            var raisesList = ActionEventList.Where(i => i.Action == ActionType.Raise).Where(i => i.Position != HeroPosition);
+            if (raisesList.IsOne())
+                return raisesList.First().Position;
+
             return default(PositionType);
         }
 

@@ -6,7 +6,7 @@
         CallOrFold,
         Limp,
         Call,
-        CallOrRaise,
+        RaiseOrCall,
         Raise,
         RaiseOrFold,
         RaiseOrCallOrFold

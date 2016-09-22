@@ -23,6 +23,18 @@ namespace Poker.Ranges.Parser
             if (action == "R")
                 return ActionType.Raise;
 
+            if (action == "RF")
+                return ActionType.RaiseOrFold;
+
+            if (action == "RC")
+                return ActionType.RaiseOrCall;
+
+            if (action == "RCF")
+                return ActionType.RaiseOrCallOrFold;
+
+            if (action == "CF")
+                return ActionType.CallOrFold;
+
             throw new NotImplementedException();
         }
     }

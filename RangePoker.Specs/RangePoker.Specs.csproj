@@ -81,7 +81,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BB_FullRing_FacingRaise_vsUTGplus2.feature</DependentUpon>
     </Compile>
-    <Compile Include="StepsDefinitions\BB_FullRing_FacingRaise_VsUTGplus2Steps.cs" />
     <Compile Include="Features\UTG6max_FullTable.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

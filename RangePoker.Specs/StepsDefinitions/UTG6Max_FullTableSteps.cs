@@ -64,12 +64,6 @@ namespace RangePoker.Specs.StepsDefinitions
         {
             HeroActionType = Scenario.Run();
         }
-        
-        //[Then]
-        //public void ThenHeroIsToldTheActionToTake()
-        //{
-        //    Assert.AreEqual(ActionType, ActionType.Raise);
-        //}
 
         [Then]
         public void ThenHeroIsToldToTakeAction_P0(int p0)

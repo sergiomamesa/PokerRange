@@ -27,9 +27,8 @@ namespace Ranges
         {
             var leftRank = hand.LeftCard.Rank;
             var rightRank = hand.RightCard.Rank;
-
-            var found = true;
-            found = MatchColumnRow(rightRank, leftRank);
+            
+            var found = MatchColumnRow(rightRank, leftRank);
 
             if (!found)
                 found = MatchColumnRow(leftRank, rightRank);

@@ -75,12 +75,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Ranges\Configuration\RFI\UTG.csv" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Ranges\Configuration\FacingRaise\" />
-    <Folder Include="Ranges\Configuration\RFIvs3Bet\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

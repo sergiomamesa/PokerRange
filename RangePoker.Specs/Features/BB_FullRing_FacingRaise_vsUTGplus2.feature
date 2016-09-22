@@ -11,4 +11,4 @@ Scenario: Hero is BB - full table
 	And Hero has 0, 1, 2, 1
 	And UTG plus two raises
 	When Action reaches Hero
-	Then Hero is told to take action 1
+	Then Hero is told to take action 5

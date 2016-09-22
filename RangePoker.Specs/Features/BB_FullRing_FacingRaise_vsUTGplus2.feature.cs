@@ -86,7 +86,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 13
  testRunner.When("Action reaches Hero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
- testRunner.Then("Hero is told to take action 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Hero is told to take action 5", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -53,7 +53,7 @@ namespace RangePoker.Specs.StepsDefinitions
         public void GivenHeroHas_P0__P1__P2__P3(int p0, int p1, int p2, int p3)
         {
             var leftCard = new Card((SuitType)p0, (RankType)p1);
-            var rightCard = new Card((SuitType)p2, (RankType)p2);
+            var rightCard = new Card((SuitType)p2, (RankType)p3);
             var hand = new Hand(leftCard, rightCard);
 
             Scenario.SetHeroHand(hand);

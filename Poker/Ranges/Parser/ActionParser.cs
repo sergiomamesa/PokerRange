@@ -9,7 +9,7 @@ namespace Poker.Ranges.Parser
 {
     public class ActionParser
     {
-        private Dictionary<string, ActionType> Map;
+        private readonly Dictionary<string, ActionType> Map;
 
         public ActionParser()
         {

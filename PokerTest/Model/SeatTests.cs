@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 namespace Poker.Model.Tests
 {
     [TestFixture()]
+    [Category("SeatTests")]
     public class SeatTests
     {
         [TestCase(TableType.FullRing)]

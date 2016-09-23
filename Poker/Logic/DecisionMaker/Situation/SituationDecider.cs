@@ -1,11 +1,7 @@
-﻿using Poker.Extensions;
-using Poker.Model;
+﻿using Poker.Model;
 using Poker.Model.Enums;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Poker.Logic
 {
@@ -13,23 +9,23 @@ namespace Poker.Logic
     {
         private readonly List<ActionEvent> ActionEventList;
         private readonly PositionType HeroPosition;
+        private readonly List<SituationRule> SituationRules;
 
         public SituationDecider(List<ActionEvent> actionEventList, PositionType heroPosition)
         {
             ActionEventList = actionEventList;
             HeroPosition = heroPosition;
-        }
 
+            SituationRules = new SituationRulesGenerator().Create();
+        }
+         
         public SituationType CalculateSituation()
         {
-            if (ActionEventList.Where(a => a.Action == ActionType.Raise).Any(p => p.Position == HeroPosition))
-                return SituationType.RFIvs3Bet;
-
-            if (ActionEventList.None(a => a.Action == ActionType.Raise))
-                return SituationType.RaiseFirstIn;
-
-            if (ActionEventList.IsOne(a => a.Action == ActionType.Raise))
-                return SituationType.FacingRaise;
+            foreach (var rule in SituationRules)
+            {
+                if (rule.Condition(ActionEventList,HeroPosition))
+                    return rule.Result;
+            }
 
             throw new NotImplementedException();
         }

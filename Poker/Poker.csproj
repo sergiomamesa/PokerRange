@@ -46,8 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Logic\DecisionMaker\DecisionMaker.cs" />
-    <Compile Include="Logic\DecisionMaker\ISituation.cs" />
-    <Compile Include="Logic\DecisionMaker\SituationDecider.cs" />
+    <Compile Include="Logic\DecisionMaker\Situation\SituationRule.cs" />
+    <Compile Include="Logic\DecisionMaker\Situation\SituationDecider.cs" />
+    <Compile Include="Logic\DecisionMaker\Situation\SituationRulesGenerator.cs" />
     <Compile Include="Logic\DecisionMaker\VillainDecider.cs" />
     <Compile Include="Logic\TableFactory.cs" />
     <Compile Include="Model\Board.cs" />

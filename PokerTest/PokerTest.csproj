@@ -70,6 +70,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Logic\DecisionMaker\DecisionMakerTests.cs" />
+    <Compile Include="Logic\DecisionMaker\SituationDeciderTests.cs" />
     <Compile Include="Model\SeatTests.cs" />
     <Compile Include="Model\TableTests.cs" />
     <Compile Include="Ranges\Tables\TableRangeTests.cs" />
@@ -85,6 +87,7 @@
       <Name>Poker</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

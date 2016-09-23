@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 namespace Ranges.Tests
 {
     [TestFixture()]
+    [Category("TableRangeTests")]
     public class TableRangeTests
     {
 

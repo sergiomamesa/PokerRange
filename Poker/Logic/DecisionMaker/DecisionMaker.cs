@@ -23,36 +23,13 @@ namespace Poker.Logic
             HeroPosition = heroPosition;
         }
 
-        private PositionType CalculateVillainPosition()
-        {
-            var raisesList = ActionEventList.Where(i => i.Action == ActionType.Raise).Where(i => i.Position != HeroPosition);
-            if (raisesList.IsOne())
-                return raisesList.First().Position;
-
-            return default(PositionType);
-        }
-
-        private SituationType CalculateSituation()
-        {
-            if (ActionEventList.Where(a => a.Action == ActionType.Raise).Any(p => p.Position == HeroPosition))
-                return SituationType.RFIvs3Bet;
-
-            if (ActionEventList.None(a => a.Action == ActionType.Raise))
-                return SituationType.RaiseFirstIn;
-
-            if (ActionEventList.IsOne(a => a.Action == ActionType.Raise))
-                return SituationType.FacingRaise;
-
-            throw new NotImplementedException();
-        }
-
         public ActionType Run(Hand heroHand)
         {
             var fileReaderFactoryParams = new FileReaderFactoryParams()
             {
-                Situation = CalculateSituation(),
+                Situation = new SituationDecider(ActionEventList, HeroPosition).CalculateSituation(),
                 HeroPosition = HeroPosition,
-                VillainPosition = CalculateVillainPosition()
+                VillainPosition = new VillainDecider(ActionEventList, HeroPosition).CalculateVillainPosition()
             };
 
             var fileReader = new FileReaderFactory().CreateInstance(fileReaderFactoryParams);

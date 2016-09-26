@@ -29,7 +29,6 @@ namespace Ranges
             var rightRank = hand.RightCard.Rank;
             
             var found = MatchColumnRow(rightRank, leftRank);
-
             if (!found)
                 found = MatchColumnRow(leftRank, rightRank);
 
@@ -44,13 +43,15 @@ namespace Ranges
 
         public bool MatchColumnRow(RankType columnRank, RankType rowRank)
         {
+            var result = true;
+
             if (ColumnRankType != columnRank)
-                return false;
+                result = false;
 
             if (RowRankType != rowRank)
-                return false;
+                result = false;
 
-            return true;
+            return result;
         }
 
         public override string ToString()

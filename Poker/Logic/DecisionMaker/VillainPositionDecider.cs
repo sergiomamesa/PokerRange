@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace Poker.Logic
 {
-    public class VillainDecider
+    public class VillainPositionDecider
     {
         private readonly List<ActionEvent> ActionEventList;
         private readonly PositionType HeroPosition;
 
-        public VillainDecider(List<ActionEvent> actionEventList, PositionType heroPosition)
+        public VillainPositionDecider(List<ActionEvent> actionEventList, PositionType heroPosition)
         {
             ActionEventList = actionEventList;
             HeroPosition = heroPosition;

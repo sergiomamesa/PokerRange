@@ -18,7 +18,7 @@ namespace PokerTest.Logic.DecisionMaker
         public void Test_CalculateSituation_LoJack_NoAction_IsRFI()
         {
             var actionEventList = new List<ActionEvent>();
-            var situationDecider = new SituationDecider(actionEventList, PositionType.LoJack);
+            var situationDecider = new HeroSituationDecider(actionEventList, PositionType.LoJack);
 
             var actual = situationDecider.CalculateSituation();
 
@@ -31,7 +31,7 @@ namespace PokerTest.Logic.DecisionMaker
             var actionEventList = new List<ActionEvent>();
             actionEventList.Add(new ActionEvent(PositionType.LoJack, ActionType.Fold));
 
-            var situationDecider = new SituationDecider(actionEventList, PositionType.HiJack);
+            var situationDecider = new HeroSituationDecider(actionEventList, PositionType.HiJack);
 
             var actual = situationDecider.CalculateSituation();
 
@@ -45,7 +45,7 @@ namespace PokerTest.Logic.DecisionMaker
             actionEventList.Add(new ActionEvent(PositionType.LoJack, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.HiJack, ActionType.Fold));
 
-            var situationDecider = new SituationDecider(actionEventList, PositionType.CutOff);
+            var situationDecider = new HeroSituationDecider(actionEventList, PositionType.CutOff);
 
             var actual = situationDecider.CalculateSituation();
 
@@ -60,8 +60,7 @@ namespace PokerTest.Logic.DecisionMaker
             actionEventList.Add(new ActionEvent(PositionType.HiJack, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.CutOff, ActionType.Fold));
             
-
-            var situationDecider = new SituationDecider(actionEventList, PositionType.Button);
+            var situationDecider = new HeroSituationDecider(actionEventList, PositionType.Button);
 
             var actual = situationDecider.CalculateSituation();
 
@@ -77,7 +76,7 @@ namespace PokerTest.Logic.DecisionMaker
             actionEventList.Add(new ActionEvent(PositionType.CutOff, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.Button, ActionType.Fold));
 
-            var situationDecider = new SituationDecider(actionEventList, PositionType.SmallBlind);
+            var situationDecider = new HeroSituationDecider(actionEventList, PositionType.SmallBlind);
 
             var actual = situationDecider.CalculateSituation();
 
@@ -94,7 +93,7 @@ namespace PokerTest.Logic.DecisionMaker
             actionEventList.Add(new ActionEvent(PositionType.Button, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.SmallBlind, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.BigBlind, ActionType.Fold));
-            var situationDecider = new SituationDecider(actionEventList, PositionType.LoJack);
+            var situationDecider = new HeroSituationDecider(actionEventList, PositionType.LoJack);
 
             var actual = situationDecider.CalculateSituation();
 
@@ -111,7 +110,7 @@ namespace PokerTest.Logic.DecisionMaker
             actionEventList.Add(new ActionEvent(PositionType.Button, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.SmallBlind, ActionType.Raise));
             actionEventList.Add(new ActionEvent(PositionType.BigBlind, ActionType.Raise));
-            var situationDecider = new SituationDecider(actionEventList, PositionType.SmallBlind);
+            var situationDecider = new HeroSituationDecider(actionEventList, PositionType.SmallBlind);
 
             var actual = situationDecider.CalculateSituation();
 
@@ -128,7 +127,7 @@ namespace PokerTest.Logic.DecisionMaker
             actionEventList.Add(new ActionEvent(PositionType.Button, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.SmallBlind, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.BigBlind, ActionType.Raise));
-            var situationDecider = new SituationDecider(actionEventList, PositionType.CutOff);
+            var situationDecider = new HeroSituationDecider(actionEventList, PositionType.CutOff);
 
             var actual = situationDecider.CalculateSituation();
 
@@ -144,7 +143,7 @@ namespace PokerTest.Logic.DecisionMaker
             actionEventList.Add(new ActionEvent(PositionType.CutOff, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.Button, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.SmallBlind, ActionType.Raise));
-            var situationDecider = new SituationDecider(actionEventList, PositionType.BigBlind);
+            var situationDecider = new HeroSituationDecider(actionEventList, PositionType.BigBlind);
 
             var actual = situationDecider.CalculateSituation();
 
@@ -160,7 +159,7 @@ namespace PokerTest.Logic.DecisionMaker
             actionEventList.Add(new ActionEvent(PositionType.CutOff, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.Button, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.SmallBlind, ActionType.Fold));
-            var situationDecider = new SituationDecider(actionEventList, PositionType.BigBlind);
+            var situationDecider = new HeroSituationDecider(actionEventList, PositionType.BigBlind);
 
             var actual = situationDecider.CalculateSituation();
 
@@ -175,7 +174,7 @@ namespace PokerTest.Logic.DecisionMaker
             actionEventList.Add(new ActionEvent(PositionType.HiJack, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.CutOff, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.Button, ActionType.Fold));
-            var situationDecider = new SituationDecider(actionEventList, PositionType.SmallBlind);
+            var situationDecider = new HeroSituationDecider(actionEventList, PositionType.SmallBlind);
 
             var actual = situationDecider.CalculateSituation();
 

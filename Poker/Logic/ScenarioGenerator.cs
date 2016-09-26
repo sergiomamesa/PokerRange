@@ -45,7 +45,7 @@ namespace Poker.Logic
             var decisionMaker = new DecisionMaker(ActionEventList, hero.PositionType);
 
             var heroHand = hero.Player.Hand;
-            return decisionMaker.Run(heroHand);
+            return decisionMaker.Run(heroHand).Action;
         }
     }
 }

@@ -46,10 +46,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Logic\DecisionMaker\DecisionMaker.cs" />
-    <Compile Include="Logic\DecisionMaker\Situation\SituationRule.cs" />
+    <Compile Include="Logic\DecisionMaker\DecisionMakerResult.cs" />
+    <Compile Include="Logic\DecisionMaker\Situation\ISituationDecider.cs" />
     <Compile Include="Logic\DecisionMaker\Situation\SituationDecider.cs" />
+    <Compile Include="Logic\DecisionMaker\Situation\SituationRule.cs" />
+    <Compile Include="Logic\DecisionMaker\Situation\HeroSituationDecider.cs" />
     <Compile Include="Logic\DecisionMaker\Situation\SituationRulesGenerator.cs" />
-    <Compile Include="Logic\DecisionMaker\VillainDecider.cs" />
+    <Compile Include="Logic\DecisionMaker\Situation\VillainSituationDecider.cs" />
+    <Compile Include="Logic\DecisionMaker\VillainPositionDecider.cs" />
     <Compile Include="Logic\TableFactory.cs" />
     <Compile Include="Model\Board.cs" />
     <Compile Include="Model\Card.cs" />

@@ -1,29 +1,34 @@
-﻿using Poker.Model;
-using Poker.Model.Enums;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Poker.Model;
+using Poker.Model.Enums;
 
 namespace Poker.Logic
 {
-    public class SituationDecider
+    public abstract class SituationDecider : ISituationDecider
     {
-        private readonly List<ActionEvent> ActionEventList;
-        private readonly PositionType HeroPosition;
-        private readonly List<SituationRule> SituationRules;
+        public List<ActionEvent> ActionEventList { get; set; }
+        public PositionType HeroPosition { get; set; }
+        public List<SituationRule> SituationRules { get; set; }
 
         public SituationDecider(List<ActionEvent> actionEventList, PositionType heroPosition)
         {
             ActionEventList = actionEventList;
             HeroPosition = heroPosition;
 
-            SituationRules = new SituationRulesGenerator().Create();
+            SetSituationRules();
         }
-         
-        public SituationType CalculateSituation()
+
+        public abstract void SetSituationRules();
+
+        public virtual SituationType CalculateSituation()
         {
             foreach (var rule in SituationRules)
             {
-                if (rule.Condition(ActionEventList,HeroPosition))
+                if (rule.Condition(ActionEventList, HeroPosition))
                     return rule.Result;
             }
 

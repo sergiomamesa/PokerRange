@@ -23,6 +23,5 @@ namespace Poker.Extensions
         {
             return source.Count() == 1;
         }
-
     }
 }

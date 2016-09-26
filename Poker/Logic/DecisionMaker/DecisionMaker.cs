@@ -10,12 +10,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Poker.Logic
 {
     public class DecisionMaker
     {
         private readonly List<ActionEvent> ActionEventList;
-        private readonly PositionType HeroPosition; 
+        private readonly PositionType HeroPosition;
 
         public DecisionMaker(List<ActionEvent> actionEventList, PositionType heroPosition)
         {
@@ -23,19 +24,54 @@ namespace Poker.Logic
             HeroPosition = heroPosition;
         }
 
-        public ActionType Run(Hand heroHand)
+        private DecisionMakerResult HeroResult(Hand hand)
         {
-            var fileReaderFactoryParams = new FileReaderFactoryParams()
+            var fileReaderFactoryParamsHero = new FileReaderFactoryParams()
             {
-                Situation = new SituationDecider(ActionEventList, HeroPosition).CalculateSituation(),
+                Situation = new HeroSituationDecider(ActionEventList, HeroPosition).CalculateSituation(),
                 HeroPosition = HeroPosition,
-                VillainPosition = new VillainDecider(ActionEventList, HeroPosition).CalculateVillainPosition()
+                VillainPosition = new VillainPositionDecider(ActionEventList, HeroPosition).CalculateVillainPosition()
             };
 
-            var fileReader = new FileReaderFactory().CreateInstance(fileReaderFactoryParams);
-            var tableRange = fileReader.GetRange(new ActionParser());
+            var fileReaderHero = new FileReaderFactory().CreateInstance(fileReaderFactoryParamsHero);
+            var heroRange = fileReaderHero.GetRange(new ActionParser());
+            var heroAction = heroRange.GetAction(hand);
 
-            return tableRange.GetAction(heroHand);
+            var result = new DecisionMakerResult()
+            {
+                Action = heroAction,
+                HeroRange = heroRange
+            };
+
+            return result;
+        }
+
+        private DecisionMakerResult VillainResult(DecisionMakerResult result)
+        {
+            var heroSituation = new HeroSituationDecider(ActionEventList, HeroPosition).CalculateSituation();
+            if (heroSituation == SituationType.RaiseFirstIn)
+                return result;
+
+            var fileReaderFactoryParamsVillain = new FileReaderFactoryParams()
+            {
+                Situation = new VillainSituationDecider(ActionEventList, HeroPosition).CalculateSituation(),
+                HeroPosition = new VillainPositionDecider(ActionEventList, HeroPosition).CalculateVillainPosition(),
+                VillainPosition = HeroPosition
+            };
+
+            var fileReaderVillain = new FileReaderFactory().CreateInstance(fileReaderFactoryParamsVillain);
+            var villainRange = fileReaderVillain.GetRange(new ActionParser());
+
+            result.VillainRange = villainRange;
+            return result;
+        }
+
+        public DecisionMakerResult Run(Hand heroHand)
+        {
+            var result = HeroResult(heroHand);
+            result = VillainResult(result);
+
+            return result;
         }
     }
 }

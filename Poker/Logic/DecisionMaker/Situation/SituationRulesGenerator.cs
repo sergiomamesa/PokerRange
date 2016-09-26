@@ -8,30 +8,50 @@ using System.Threading.Tasks;
 
 namespace Poker.Logic
 {
-    public class SituationRulesGenerator
+    public static class SituationRulesGenerator
     {
-        private List<SituationRule> SituationRules;
-
-        public List<SituationRule> Create()
+        public static List<SituationRule> HeroRules()
         {
-            SituationRules = new List<SituationRule>();
-            SituationRules.Add(new SituationRule()
+            var situationRules = new List<SituationRule>();
+
+            situationRules.Add(new SituationRule()
             {
                 Condition = (list, position) => list.Where(a => a.Action == ActionType.Raise).Any(p => p.Position == position),
                 Result = SituationType.RFIvs3Bet
             });
-            SituationRules.Add(new SituationRule()
+
+            situationRules.Add(new SituationRule()
             {
                 Condition = (list, postition) => list.None(a => a.Action == ActionType.Raise),
                 Result = SituationType.RaiseFirstIn
             });
-            SituationRules.Add(new SituationRule()
+
+            situationRules.Add(new SituationRule()
             {
                 Condition = (list, position) => list.IsOne(a => a.Action == ActionType.Raise),
                 Result = SituationType.FacingRaise
             });
 
-            return SituationRules;
+            return situationRules;
+        }
+
+        public static List<SituationRule> VillainRules()
+        {
+            var situationRules = new List<SituationRule>();
+
+            situationRules.Add(new SituationRule()
+            {
+                Condition = (list, position) => list.IsOne(a => a.Action == ActionType.Raise),
+                Result = SituationType.RaiseFirstIn
+            });
+
+            situationRules.Add(new SituationRule()
+            {
+                Condition = (list,position) => list.Where(a => a.Action == ActionType.Raise).Any(p => p.Position == position),
+                Result = SituationType.FacingRaise
+            });
+
+            return situationRules;
         }
     }
 }

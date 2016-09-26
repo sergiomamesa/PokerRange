@@ -41,10 +41,11 @@ namespace Poker.Logic
 
         public ActionType Run()
         {
-            var decisionMaker = new DecisionMaker(ActionEventList);
-            var heroHand = Table.Seats.FirstOrDefault(s => s.Player.IsHero).Player.Hand;
+            var hero = Table.Seats.FirstOrDefault(s => s.Player.IsHero);
+            var decisionMaker = new DecisionMaker(ActionEventList, hero.PositionType);
 
-            return decisionMaker.Run(heroHand);
+            var heroHand = hero.Player.Hand;
+            return decisionMaker.Run(heroHand).Action;
         }
     }
 }

@@ -76,6 +76,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\BB_FullRing_FacingRaise_vsUTGplus2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BB_FullRing_FacingRaise_vsUTGplus2.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\UTG6max_FullTable.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -86,6 +91,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Features\BB_FullRing_FacingRaise_vsUTGplus2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BB_FullRing_FacingRaise_vsUTGplus2.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\UTG6max_FullTable.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UTG6max_FullTable.feature.cs</LastGenOutput>

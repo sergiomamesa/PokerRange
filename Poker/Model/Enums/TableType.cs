@@ -8,8 +8,8 @@ namespace Poker.Model.Enums
 {
     public enum TableType
     {
+        FullRing = 0,
         SixMax,
-        FullRing,
         HeadsUp
     }
 }

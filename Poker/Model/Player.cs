@@ -8,9 +8,6 @@ namespace Poker.Model
 {
     public class Player
     {
-        //public bool IsDealer { get; private set; }
-        //public bool IsSmallBlind { get; private set; }
-        //public bool IsBigBlind { get; private set; }
         public Hand Hand { get; set; }
         public bool IsHero = false;
     }

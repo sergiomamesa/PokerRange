@@ -13,7 +13,7 @@ namespace Ranges.Reader
     {
         private string FileName { get; set; }
 
-        public FileReader(string fileName)
+        internal FileReader(string fileName)
         {
             FileName = fileName;
         }
@@ -27,9 +27,9 @@ namespace Ranges.Reader
             foreach (var line in lines)
             {
                 var columnIterator = 0;
-                foreach (var value in line.Split(','))
+                foreach (var value in line.Split(';'))
                 {
-                    var isSuited = columnIterator >= rowIterator;
+                    var isSuited = columnIterator > rowIterator;
                     table.Cells.Add(new TableCell((RankType)columnIterator, (RankType)rowIterator, isSuited, parser.Parse(value)));
                     columnIterator++;
                 }

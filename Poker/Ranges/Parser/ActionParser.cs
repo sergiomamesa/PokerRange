@@ -29,7 +29,7 @@ namespace Poker.Ranges.Parser
             if (Map.ContainsKey(action))
                 return Map[action];
 
-            throw new NotImplementedException();
+            throw new Exception("Not valid input for ActionType in map list");
         }
     }
 }

@@ -10,6 +10,7 @@
         LoJack,
         UTGplus2,
         UTGplus1,
-        UTG
+        UTG,
+        NoSeat
     }
 }

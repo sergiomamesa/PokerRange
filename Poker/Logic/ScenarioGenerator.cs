@@ -13,7 +13,7 @@ namespace Poker.Logic
         public Table Table { get; set; }
         public Deck Deck = new Deck();
         private List<ActionEvent> ActionEventList { get; set; }
-        public BoardStateType BoardState { get; set; }
+        private BoardStateType BoardState { get; set; }
 
         public ScenarioGenerator(TableType tableType)
         {
@@ -39,13 +39,20 @@ namespace Poker.Logic
             ActionEventList.Add(new ActionEvent(position, action));
         }
 
-        public ActionType Run()
+        public DecisionMakerResult Run()
         {
             var hero = Table.Seats.FirstOrDefault(s => s.Player.IsHero);
             var decisionMaker = new DecisionMaker(ActionEventList, hero.PositionType);
             decisionMaker.Run(hero.Player.Hand);
 
-            return decisionMaker.HeroAction;
+            var result = new DecisionMakerResult()
+            {
+                HeroAction = decisionMaker.HeroAction,
+                HeroRange = decisionMaker.HeroRange,
+                VillainRange = decisionMaker.VillainRange
+            };
+
+            return result;
         }
     }
 }

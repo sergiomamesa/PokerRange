@@ -62,7 +62,7 @@ namespace RangePoker.Specs.StepsDefinitions
         [When]
         public void WhenActionReachesHero()
         {
-            HeroActionType = Scenario.Run();
+            HeroActionType = Scenario.Run().HeroAction;
         }
 
         [Then]

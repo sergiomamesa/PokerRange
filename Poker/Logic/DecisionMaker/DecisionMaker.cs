@@ -42,10 +42,11 @@ namespace Poker.Logic
             if (heroSituation == SituationType.RaiseFirstIn)
                 return;
 
+            var villainPosition = new VillainPositionDecider(ActionEventList, HeroPosition).CalculateVillainPosition();
             var fileReaderFactoryParams = new FileReaderFactoryParams()
             {
-                Situation = new VillainSituationDecider(ActionEventList, HeroPosition).CalculateSituation(),
-                HeroPosition = new VillainPositionDecider(ActionEventList, HeroPosition).CalculateVillainPosition(),
+                Situation = new VillainSituationDecider(ActionEventList, villainPosition).CalculateSituation(),
+                HeroPosition = villainPosition,
                 VillainPosition = HeroPosition
             };
 

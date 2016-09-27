@@ -11,26 +11,28 @@ namespace Poker.Logic
     public abstract class SituationDecider : ISituationDecider
     {
         public List<ActionEvent> ActionEventList { get; set; }
-        public PositionType HeroPosition { get; set; }
+        public PositionType Position { get; set; }
         public List<SituationRule> SituationRules { get; set; }
 
-        public SituationDecider(List<ActionEvent> actionEventList, PositionType heroPosition)
+        public SituationDecider(List<ActionEvent> actionEventList, PositionType position)
         {
             ActionEventList = actionEventList;
-            HeroPosition = heroPosition;
+            Position = position;
         }
 
         public abstract void SetSituationRules();
 
-        public virtual SituationType CalculateSituation()
+        public SituationType CalculateSituation()
         {
+            SetSituationRules();
+
             foreach (var rule in SituationRules)
             {
-                if (rule.Condition(ActionEventList, HeroPosition))
+                if (rule.Condition(ActionEventList, Position))
                     return rule.Result;
             }
 
-            throw new NotImplementedException();
+            throw new Exception("None of the rules match this situation");
         }
     }
 }

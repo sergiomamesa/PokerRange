@@ -7,7 +7,7 @@ namespace Poker.Logic
     interface ISituationDecider
     {
         List<ActionEvent> ActionEventList { get; set; }
-        PositionType HeroPosition { get; set; }
+        PositionType Position { get; set; }
         List<SituationRule> SituationRules { get; set; }
     }
 }

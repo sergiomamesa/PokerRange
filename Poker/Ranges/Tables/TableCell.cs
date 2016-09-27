@@ -56,7 +56,8 @@ namespace Ranges
 
         public override string ToString()
         {
-            return String.Format("{0} {1} {2} {3}", ColumnRankType, RowRankType, IsSuited, Action);
+            return Action.ToString();
+            //return String.Format("{0} {1} {2} {3}", ColumnRankType, RowRankType, IsSuited, Action);
         }
     }
 }

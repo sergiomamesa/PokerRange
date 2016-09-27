@@ -7,8 +7,8 @@ using Poker.Ranges.Reader;
 namespace PokerTest.Ranges
 {
     [TestFixture()]
-    [Category("TableRangeTests")]
-    public class TableRangeTests
+    [Category("TableRangeHeroTests")]
+    public class TableRangeHeroTests
     {
 
         [TestCase(RankType.Two, SuitType.Clubs, RankType.Two, SuitType.Spades)]
@@ -146,7 +146,7 @@ namespace PokerTest.Ranges
         [TestCase(RankType.Ace, SuitType.Diamonds, RankType.King, SuitType.Hearts)]
         public void Test_TableRange_GetAction_Specifichand_LoJack_RFIvs3Bet_HiJack_IsRaise(RankType leftRank, SuitType leftSuit, RankType rightType, SuitType rightSuit)
         {
-            var parameters = new FileReaderFactoryParams() { Situation = SituationType.RFIvs3Bet, HeroPosition = PositionType.LoJack, VillainPosition = PositionType.HiJack };
+            var parameters = new FileReaderFactoryParams() { Situation = SituationType.RFIvs3Bet, HeroPosition = PositionType.HiJack, VillainPosition = PositionType.LoJack };
             var ranges = new FileReaderFactory().CreateInstance(parameters).GetRange(new ActionParser()); ;
             var hand = new Hand(new Card(leftSuit, leftRank), new Card(rightSuit, rightType));
 
@@ -158,7 +158,7 @@ namespace PokerTest.Ranges
         [TestCase(RankType.Jack, SuitType.Diamonds, RankType.Jack, SuitType.Hearts)]
         public void Test_TableRange_GetAction_Specifichand_LoJack_RFIvs3Bet_HiJack_IsRaiseCall(RankType leftRank, SuitType leftSuit, RankType rightType, SuitType rightSuit)
         {
-            var parameters = new FileReaderFactoryParams() { Situation = SituationType.RFIvs3Bet, HeroPosition = PositionType.LoJack, VillainPosition = PositionType.HiJack };
+            var parameters = new FileReaderFactoryParams() { Situation = SituationType.RFIvs3Bet, HeroPosition = PositionType.HiJack, VillainPosition = PositionType.LoJack };
             var ranges = new FileReaderFactory().CreateInstance(parameters).GetRange(new ActionParser()); ;
             var hand = new Hand(new Card(leftSuit, leftRank), new Card(rightSuit, rightType));
 
@@ -174,7 +174,7 @@ namespace PokerTest.Ranges
         [TestCase(RankType.Jack, SuitType.Diamonds, RankType.Ten, SuitType.Diamonds)]
         public void Test_TableRange_GetAction_Specifichand_LoJack_RFIvs3Bet_HiJack_IsCall(RankType leftRank, SuitType leftSuit, RankType rightType, SuitType rightSuit)
         {
-            var parameters = new FileReaderFactoryParams() { Situation = SituationType.RFIvs3Bet, HeroPosition = PositionType.LoJack, VillainPosition = PositionType.HiJack };
+            var parameters = new FileReaderFactoryParams() { Situation = SituationType.RFIvs3Bet, HeroPosition = PositionType.HiJack, VillainPosition = PositionType.LoJack };
             var ranges = new FileReaderFactory().CreateInstance(parameters).GetRange(new ActionParser()); ;
             var hand = new Hand(new Card(leftSuit, leftRank), new Card(rightSuit, rightType));
 
@@ -187,7 +187,7 @@ namespace PokerTest.Ranges
         [TestCase(RankType.Ace, SuitType.Diamonds, RankType.Nine, SuitType.Diamonds)]
         public void Test_TableRange_GetAction_Specifichand_LoJack_RFIvs3Bet_HiJack_IsRaiseFold(RankType leftRank, SuitType leftSuit, RankType rightType, SuitType rightSuit)
         {
-            var parameters = new FileReaderFactoryParams() { Situation = SituationType.RFIvs3Bet, HeroPosition = PositionType.LoJack, VillainPosition = PositionType.HiJack };
+            var parameters = new FileReaderFactoryParams() { Situation = SituationType.RFIvs3Bet, HeroPosition = PositionType.HiJack, VillainPosition = PositionType.LoJack };
             var ranges = new FileReaderFactory().CreateInstance(parameters).GetRange(new ActionParser()); ;
             var hand = new Hand(new Card(leftSuit, leftRank), new Card(rightSuit, rightType));
 
@@ -200,7 +200,7 @@ namespace PokerTest.Ranges
         [TestCase(RankType.Queen, SuitType.Diamonds, RankType.Ten, SuitType.Diamonds)]
         public void Test_TableRange_GetAction_Specifichand_LoJack_RFIvs3Bet_HiJack_IsCallFold(RankType leftRank, SuitType leftSuit, RankType rightType, SuitType rightSuit)
         {
-            var parameters = new FileReaderFactoryParams() { Situation = SituationType.RFIvs3Bet, HeroPosition = PositionType.LoJack, VillainPosition = PositionType.HiJack };
+            var parameters = new FileReaderFactoryParams() { Situation = SituationType.RFIvs3Bet, HeroPosition = PositionType.HiJack, VillainPosition = PositionType.LoJack };
             var ranges = new FileReaderFactory().CreateInstance(parameters).GetRange(new ActionParser()); ;
             var hand = new Hand(new Card(leftSuit, leftRank), new Card(rightSuit, rightType));
 
@@ -216,7 +216,7 @@ namespace PokerTest.Ranges
         [TestCase(RankType.Ten, SuitType.Diamonds, RankType.Nine, SuitType.Hearts)]
         public void Test_TableRange_GetAction_Specifichand_LoJack_RFIvs3Bet_HiJack_IsFold(RankType leftRank, SuitType leftSuit, RankType rightType, SuitType rightSuit)
         {
-            var parameters = new FileReaderFactoryParams() { Situation = SituationType.RFIvs3Bet, HeroPosition = PositionType.LoJack, VillainPosition = PositionType.HiJack };
+            var parameters = new FileReaderFactoryParams() { Situation = SituationType.RFIvs3Bet, HeroPosition = PositionType.HiJack, VillainPosition = PositionType.LoJack };
             var ranges = new FileReaderFactory().CreateInstance(parameters).GetRange(new ActionParser()); ;
             var hand = new Hand(new Card(leftSuit, leftRank), new Card(rightSuit, rightType));
 

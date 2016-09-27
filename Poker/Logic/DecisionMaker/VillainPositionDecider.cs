@@ -23,7 +23,7 @@ namespace Poker.Logic
             if (raisesList.IsOne())
                 return raisesList.First().Position;
 
-            return default(PositionType);
+            return PositionType.NoSeat;
         }
     }
 }

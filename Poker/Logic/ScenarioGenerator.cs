@@ -43,9 +43,9 @@ namespace Poker.Logic
         {
             var hero = Table.Seats.FirstOrDefault(s => s.Player.IsHero);
             var decisionMaker = new DecisionMaker(ActionEventList, hero.PositionType);
+            decisionMaker.Run(hero.Player.Hand);
 
-            var heroHand = hero.Player.Hand;
-            return decisionMaker.Run(heroHand).Action;
+            return decisionMaker.HeroAction;
         }
     }
 }

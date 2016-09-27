@@ -18,8 +18,6 @@ namespace Poker.Logic
         {
             ActionEventList = actionEventList;
             HeroPosition = heroPosition;
-
-            SetSituationRules();
         }
 
         public abstract void SetSituationRules();

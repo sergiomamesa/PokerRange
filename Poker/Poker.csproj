@@ -46,7 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Logic\DecisionMaker\DecisionMaker.cs" />
-    <Compile Include="Logic\DecisionMaker\DecisionMakerResult.cs" />
     <Compile Include="Logic\DecisionMaker\Situation\ISituationDecider.cs" />
     <Compile Include="Logic\DecisionMaker\Situation\SituationDecider.cs" />
     <Compile Include="Logic\DecisionMaker\Situation\SituationRule.cs" />

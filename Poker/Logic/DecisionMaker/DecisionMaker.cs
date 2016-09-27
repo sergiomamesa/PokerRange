@@ -1,15 +1,9 @@
 ﻿using Poker.Model;
-using Poker.Extensions;
 using Poker.Model.Enums;
 using Poker.Ranges.Parser;
 using Poker.Ranges.Reader;
-using Ranges.Reader;
-using System;
+using Ranges;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace Poker.Logic
 {
@@ -18,60 +12,51 @@ namespace Poker.Logic
         private readonly List<ActionEvent> ActionEventList;
         private readonly PositionType HeroPosition;
 
+        public TableRange HeroRange { get; private set; }
+        public TableRange VillainRange { get; private set; }
+        public ActionType HeroAction { get; private set; }
+
         public DecisionMaker(List<ActionEvent> actionEventList, PositionType heroPosition)
         {
             ActionEventList = actionEventList;
             HeroPosition = heroPosition;
         }
 
-        private DecisionMakerResult HeroResult(Hand hand)
+        private void HeroResult(Hand hand)
         {
-            var fileReaderFactoryParamsHero = new FileReaderFactoryParams()
+            var fileReaderFactoryParams = new FileReaderFactoryParams()
             {
                 Situation = new HeroSituationDecider(ActionEventList, HeroPosition).CalculateSituation(),
                 HeroPosition = HeroPosition,
                 VillainPosition = new VillainPositionDecider(ActionEventList, HeroPosition).CalculateVillainPosition()
             };
 
-            var fileReaderHero = new FileReaderFactory().CreateInstance(fileReaderFactoryParamsHero);
-            var heroRange = fileReaderHero.GetRange(new ActionParser());
-            var heroAction = heroRange.GetAction(hand);
-
-            var result = new DecisionMakerResult()
-            {
-                Action = heroAction,
-                HeroRange = heroRange
-            };
-
-            return result;
+            var fileReader = new FileReaderFactory().CreateInstance(fileReaderFactoryParams);
+            HeroRange = fileReader.GetRange(new ActionParser());
+            HeroAction = HeroRange.GetAction(hand);
         }
 
-        private DecisionMakerResult VillainResult(DecisionMakerResult result)
+        private void VillainResult()
         {
             var heroSituation = new HeroSituationDecider(ActionEventList, HeroPosition).CalculateSituation();
             if (heroSituation == SituationType.RaiseFirstIn)
-                return result;
+                return;
 
-            var fileReaderFactoryParamsVillain = new FileReaderFactoryParams()
+            var fileReaderFactoryParams = new FileReaderFactoryParams()
             {
                 Situation = new VillainSituationDecider(ActionEventList, HeroPosition).CalculateSituation(),
                 HeroPosition = new VillainPositionDecider(ActionEventList, HeroPosition).CalculateVillainPosition(),
                 VillainPosition = HeroPosition
             };
 
-            var fileReaderVillain = new FileReaderFactory().CreateInstance(fileReaderFactoryParamsVillain);
-            var villainRange = fileReaderVillain.GetRange(new ActionParser());
-
-            result.VillainRange = villainRange;
-            return result;
+            var fileReader = new FileReaderFactory().CreateInstance(fileReaderFactoryParams);
+            VillainRange = fileReader.GetRange(new ActionParser());
         }
 
-        public DecisionMakerResult Run(Hand heroHand)
+        public void Run(Hand heroHand)
         {
-            var result = HeroResult(heroHand);
-            result = VillainResult(result);
-
-            return result;
+            HeroResult(heroHand);
+            VillainResult();
         }
     }
 }

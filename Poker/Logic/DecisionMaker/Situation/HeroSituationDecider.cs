@@ -9,7 +9,8 @@ namespace Poker.Logic
     {
         public HeroSituationDecider(List<ActionEvent> actionEventList, PositionType heroPosition) 
             : base(actionEventList, heroPosition)
-        {            
+        {
+            SetSituationRules();
         }
 
         public override void SetSituationRules()

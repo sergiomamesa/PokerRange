@@ -3,14 +3,8 @@ using Poker.Model;
 using Poker.Model.Enums;
 using Poker.Ranges.Parser;
 using Poker.Ranges.Reader;
-using Ranges;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Ranges.Tests
+namespace PokerTest.Ranges
 {
     [TestFixture()]
     [Category("TableRangeTests")]

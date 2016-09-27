@@ -1,14 +1,9 @@
 ﻿using NUnit.Framework;
 using Poker.Logic;
-using Poker.Model;
 using Poker.Model.Enums;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Poker.Model.Tests
+namespace PokerTest.Model
 {
     [TestFixture()]
     [Category("TableTests")]

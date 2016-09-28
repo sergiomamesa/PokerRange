@@ -56,7 +56,7 @@
     <Compile Include="Logic\DecisionMaker\Situation\SituationRules\HeroRules\RFIvs3BetHeroRule.cs" />
     <Compile Include="Logic\DecisionMaker\Situation\SituationRules\ISituationRule.cs" />
     <Compile Include="Logic\DecisionMaker\Situation\SituationRules\SituationRulesGenerator.cs" />
-    <Compile Include="Logic\DecisionMaker\Situation\SituationRules\VillainRules\FacingRaiseVillainRule.cs" />
+    <Compile Include="Logic\DecisionMaker\Situation\SituationRules\VillainRules\RFIvs3BetVillainRule.cs" />
     <Compile Include="Logic\DecisionMaker\Situation\SituationRules\VillainRules\NoVillainRule.cs" />
     <Compile Include="Logic\DecisionMaker\Situation\SituationRules\VillainRules\RaiseFirstInVillainRule.cs" />
     <Compile Include="Logic\DecisionMaker\Situation\VillainSituationDecider.cs" />

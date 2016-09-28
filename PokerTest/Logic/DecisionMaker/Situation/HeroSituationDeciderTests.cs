@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PokerTest.Logic.DecisionMaker
+namespace PokerTest.Logic
 {
     [TestFixture]
     [Category("HeroSituationDeciderTests")]

@@ -57,7 +57,7 @@ namespace Poker.Logic
             };
 
             var fileReaderVillain = new FileReaderFactory().CreateInstance(fileReaderFactoryParamsVillain);
-            Result.VillainRange = fileReaderVillain.GetRange(new ActionParser());
+            Result.VillainRange = fileReaderVillain.GetRange(new ActionFilterParser(villainSituationResult.Action));
         }
     }
 }

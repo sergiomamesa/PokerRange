@@ -18,7 +18,7 @@ namespace Ranges.Reader
             FileName = fileName;
         }
 
-        public TableRange GetRange(ActionParser parser)
+        public TableRange GetRange(IActionParser parser)
         {
             var table = new TableRange();
 

@@ -1,10 +1,4 @@
-﻿using Poker.Extensions;
-using Poker.Model.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Poker.Logic
 {
@@ -33,7 +27,7 @@ namespace Poker.Logic
             Rules = new List<ISituationRule>();
 
             Rules.Add(new RaiseFirstInVillainRule());
-            Rules.Add(new FacingRaiseVillainRule());
+            Rules.Add(new RFIvs3BetVillainRule());
             Rules.Add(new NoVillainRule());
 
             return Rules;

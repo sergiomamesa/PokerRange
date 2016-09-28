@@ -79,7 +79,9 @@
     <Compile Include="Model\Seat.cs" />
     <Compile Include="Model\Table.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ranges\Parser\ActionFilterParser.cs" />
     <Compile Include="Ranges\Parser\ActionParser.cs" />
+    <Compile Include="Ranges\Parser\IActionParser.cs" />
     <Compile Include="Ranges\Reader\FileReader.cs" />
     <Compile Include="Ranges\Reader\FileReaderFactory.cs" />
     <Compile Include="Ranges\Reader\FileReaderFactoryParams.cs" />

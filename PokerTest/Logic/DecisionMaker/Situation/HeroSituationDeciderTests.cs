@@ -2,23 +2,27 @@
 using Poker.Logic;
 using Poker.Model;
 using Poker.Model.Enums;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace PokerTest.Logic.DecisionMaker
 {
     [TestFixture]
-    [Category("SituationDeciderTests")]
-    public class SituationDeciderTests
+    [Category("HeroSituationDeciderTests")]
+    public class HeroSituationDeciderTests
     {
         [Test]
         public void Test_CalculateSituation_LoJack_NoAction_IsRFI()
         {
             var actionEventList = new List<ActionEvent>();
-            var situationDecider = new SituationDecider(actionEventList, PositionType.LoJack);
+            var situationDecider = new HeroSituationDecider(actionEventList, PositionType.LoJack);
 
             var actual = situationDecider.CalculateSituation();
 
-            Assert.AreEqual(SituationType.RaiseFirstIn, actual);
+            Assert.AreEqual(SituationType.RaiseFirstIn, actual.Situation);
         }
 
         [Test]
@@ -27,11 +31,11 @@ namespace PokerTest.Logic.DecisionMaker
             var actionEventList = new List<ActionEvent>();
             actionEventList.Add(new ActionEvent(PositionType.LoJack, ActionType.Fold));
 
-            var situationDecider = new SituationDecider(actionEventList, PositionType.HiJack);
+            var situationDecider = new HeroSituationDecider(actionEventList, PositionType.HiJack);
 
             var actual = situationDecider.CalculateSituation();
 
-            Assert.AreEqual(SituationType.RaiseFirstIn, actual);
+            Assert.AreEqual(SituationType.RaiseFirstIn, actual.Situation);
         }
 
         [Test]
@@ -41,11 +45,11 @@ namespace PokerTest.Logic.DecisionMaker
             actionEventList.Add(new ActionEvent(PositionType.LoJack, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.HiJack, ActionType.Fold));
 
-            var situationDecider = new SituationDecider(actionEventList, PositionType.CutOff);
+            var situationDecider = new HeroSituationDecider(actionEventList, PositionType.CutOff);
 
             var actual = situationDecider.CalculateSituation();
 
-            Assert.AreEqual(SituationType.RaiseFirstIn, actual);
+            Assert.AreEqual(SituationType.RaiseFirstIn, actual.Situation);
         }
 
         [Test]
@@ -56,11 +60,11 @@ namespace PokerTest.Logic.DecisionMaker
             actionEventList.Add(new ActionEvent(PositionType.HiJack, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.CutOff, ActionType.Fold));
             
-            var situationDecider = new SituationDecider(actionEventList, PositionType.Button);
+            var situationDecider = new HeroSituationDecider(actionEventList, PositionType.Button);
 
             var actual = situationDecider.CalculateSituation();
 
-            Assert.AreEqual(SituationType.RaiseFirstIn, actual);
+            Assert.AreEqual(SituationType.RaiseFirstIn, actual.Situation);
         }
 
         [Test]
@@ -72,11 +76,11 @@ namespace PokerTest.Logic.DecisionMaker
             actionEventList.Add(new ActionEvent(PositionType.CutOff, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.Button, ActionType.Fold));
 
-            var situationDecider = new SituationDecider(actionEventList, PositionType.SmallBlind);
+            var situationDecider = new HeroSituationDecider(actionEventList, PositionType.SmallBlind);
 
             var actual = situationDecider.CalculateSituation();
 
-            Assert.AreEqual(SituationType.RaiseFirstIn, actual);
+            Assert.AreEqual(SituationType.RaiseFirstIn, actual.Situation);
         }
 
         [Test]
@@ -89,11 +93,11 @@ namespace PokerTest.Logic.DecisionMaker
             actionEventList.Add(new ActionEvent(PositionType.Button, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.SmallBlind, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.BigBlind, ActionType.Fold));
-            var situationDecider = new SituationDecider(actionEventList, PositionType.LoJack);
+            var situationDecider = new HeroSituationDecider(actionEventList, PositionType.LoJack);
 
             var actual = situationDecider.CalculateSituation();
 
-            Assert.AreEqual(SituationType.RFIvs3Bet, actual);
+            Assert.AreEqual(SituationType.RFIvs3Bet, actual.Situation);
         }
 
         [Test]
@@ -106,11 +110,11 @@ namespace PokerTest.Logic.DecisionMaker
             actionEventList.Add(new ActionEvent(PositionType.Button, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.SmallBlind, ActionType.Raise));
             actionEventList.Add(new ActionEvent(PositionType.BigBlind, ActionType.Raise));
-            var situationDecider = new SituationDecider(actionEventList, PositionType.SmallBlind);
+            var situationDecider = new HeroSituationDecider(actionEventList, PositionType.SmallBlind);
 
             var actual = situationDecider.CalculateSituation();
 
-            Assert.AreEqual(SituationType.RFIvs3Bet, actual);
+            Assert.AreEqual(SituationType.RFIvs3Bet, actual.Situation);
         }
 
         [Test]
@@ -123,11 +127,11 @@ namespace PokerTest.Logic.DecisionMaker
             actionEventList.Add(new ActionEvent(PositionType.Button, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.SmallBlind, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.BigBlind, ActionType.Raise));
-            var situationDecider = new SituationDecider(actionEventList, PositionType.CutOff);
+            var situationDecider = new HeroSituationDecider(actionEventList, PositionType.CutOff);
 
             var actual = situationDecider.CalculateSituation();
 
-            Assert.AreEqual(SituationType.RFIvs3Bet, actual);
+            Assert.AreEqual(SituationType.RFIvs3Bet, actual.Situation);
         }
 
         [Test]
@@ -139,11 +143,11 @@ namespace PokerTest.Logic.DecisionMaker
             actionEventList.Add(new ActionEvent(PositionType.CutOff, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.Button, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.SmallBlind, ActionType.Raise));
-            var situationDecider = new SituationDecider(actionEventList, PositionType.BigBlind);
+            var situationDecider = new HeroSituationDecider(actionEventList, PositionType.BigBlind);
 
             var actual = situationDecider.CalculateSituation();
 
-            Assert.AreEqual(SituationType.FacingRaise, actual);
+            Assert.AreEqual(SituationType.FacingRaise, actual.Situation);
         }
 
         [Test]
@@ -155,11 +159,11 @@ namespace PokerTest.Logic.DecisionMaker
             actionEventList.Add(new ActionEvent(PositionType.CutOff, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.Button, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.SmallBlind, ActionType.Fold));
-            var situationDecider = new SituationDecider(actionEventList, PositionType.BigBlind);
+            var situationDecider = new HeroSituationDecider(actionEventList, PositionType.BigBlind);
 
             var actual = situationDecider.CalculateSituation();
 
-            Assert.AreEqual(SituationType.FacingRaise, actual);
+            Assert.AreEqual(SituationType.FacingRaise, actual.Situation);
         }
 
         [Test]
@@ -170,11 +174,11 @@ namespace PokerTest.Logic.DecisionMaker
             actionEventList.Add(new ActionEvent(PositionType.HiJack, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.CutOff, ActionType.Fold));
             actionEventList.Add(new ActionEvent(PositionType.Button, ActionType.Fold));
-            var situationDecider = new SituationDecider(actionEventList, PositionType.SmallBlind);
+            var situationDecider = new HeroSituationDecider(actionEventList, PositionType.SmallBlind);
 
             var actual = situationDecider.CalculateSituation();
 
-            Assert.AreEqual(SituationType.FacingRaise, actual);
+            Assert.AreEqual(SituationType.FacingRaise, actual.Situation);
         }
     }
 }

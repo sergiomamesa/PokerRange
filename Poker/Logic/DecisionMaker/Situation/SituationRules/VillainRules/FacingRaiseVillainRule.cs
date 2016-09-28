@@ -7,17 +7,17 @@ using System.Linq;
 
 namespace Poker.Logic
 {
-    public class FacingRaiseVillainRule : ISituationRule
+    public class RFIvs3BetVillainRule : ISituationRule
     {
         public Func<List<ActionEvent>, PositionType, bool> Condition { get; set; }
         public Func<List<ActionEvent>, PositionType, SituationDeciderResult> Result { get; set; }
 
-        public FacingRaiseVillainRule()
+        public RFIvs3BetVillainRule()
         {
             Condition = (list, position) =>
             {
                 var raiseList = list.Where(i => i.Action == ActionType.Raise);
-                if (raiseList.Count() > 1)
+                if (raiseList.Count() == 3)
                     if (raiseList.IsOne(i => i.Position == position))
                         return true;
 
@@ -26,7 +26,7 @@ namespace Poker.Logic
 
             Result = (list, position) => new SituationDeciderResult()
             {
-                Situation = SituationType.FacingRaise,
+                Situation = SituationType.RFIvs3Bet,
                 Action = list.LastOrDefault(i => i.Position == position).Action,
                 Position = list.LastOrDefault(i => i.Position == position).Position
             };

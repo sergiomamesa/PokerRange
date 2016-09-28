@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Poker.Ranges.Parser
 {
-    public class ActionParser
+    public class ActionParser : IActionParser
     {
         private readonly Dictionary<string, ActionType> Map;
 

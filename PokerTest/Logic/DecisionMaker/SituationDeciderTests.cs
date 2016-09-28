@@ -22,7 +22,7 @@ namespace PokerTest.Logic.DecisionMaker
 
             var actual = situationDecider.CalculateSituation();
 
-            Assert.AreEqual(SituationType.RaiseFirstIn, actual);
+            Assert.AreEqual(SituationType.RaiseFirstIn, actual.Situation);
         }
 
         [Test]
@@ -35,7 +35,7 @@ namespace PokerTest.Logic.DecisionMaker
 
             var actual = situationDecider.CalculateSituation();
 
-            Assert.AreEqual(SituationType.RaiseFirstIn, actual);
+            Assert.AreEqual(SituationType.RaiseFirstIn, actual.Situation);
         }
 
         [Test]
@@ -49,7 +49,7 @@ namespace PokerTest.Logic.DecisionMaker
 
             var actual = situationDecider.CalculateSituation();
 
-            Assert.AreEqual(SituationType.RaiseFirstIn, actual);
+            Assert.AreEqual(SituationType.RaiseFirstIn, actual.Situation);
         }
 
         [Test]
@@ -64,7 +64,7 @@ namespace PokerTest.Logic.DecisionMaker
 
             var actual = situationDecider.CalculateSituation();
 
-            Assert.AreEqual(SituationType.RaiseFirstIn, actual);
+            Assert.AreEqual(SituationType.RaiseFirstIn, actual.Situation);
         }
 
         [Test]
@@ -80,7 +80,7 @@ namespace PokerTest.Logic.DecisionMaker
 
             var actual = situationDecider.CalculateSituation();
 
-            Assert.AreEqual(SituationType.RaiseFirstIn, actual);
+            Assert.AreEqual(SituationType.RaiseFirstIn, actual.Situation);
         }
 
         [Test]
@@ -97,7 +97,7 @@ namespace PokerTest.Logic.DecisionMaker
 
             var actual = situationDecider.CalculateSituation();
 
-            Assert.AreEqual(SituationType.RFIvs3Bet, actual);
+            Assert.AreEqual(SituationType.RFIvs3Bet, actual.Situation);
         }
 
         [Test]
@@ -114,7 +114,7 @@ namespace PokerTest.Logic.DecisionMaker
 
             var actual = situationDecider.CalculateSituation();
 
-            Assert.AreEqual(SituationType.RFIvs3Bet, actual);
+            Assert.AreEqual(SituationType.RFIvs3Bet, actual.Situation);
         }
 
         [Test]
@@ -131,7 +131,7 @@ namespace PokerTest.Logic.DecisionMaker
 
             var actual = situationDecider.CalculateSituation();
 
-            Assert.AreEqual(SituationType.RFIvs3Bet, actual);
+            Assert.AreEqual(SituationType.RFIvs3Bet, actual.Situation);
         }
 
         [Test]
@@ -147,7 +147,7 @@ namespace PokerTest.Logic.DecisionMaker
 
             var actual = situationDecider.CalculateSituation();
 
-            Assert.AreEqual(SituationType.FacingRaise, actual);
+            Assert.AreEqual(SituationType.FacingRaise, actual.Situation);
         }
 
         [Test]
@@ -163,7 +163,7 @@ namespace PokerTest.Logic.DecisionMaker
 
             var actual = situationDecider.CalculateSituation();
 
-            Assert.AreEqual(SituationType.FacingRaise, actual);
+            Assert.AreEqual(SituationType.FacingRaise, actual.Situation);
         }
 
         [Test]
@@ -178,7 +178,7 @@ namespace PokerTest.Logic.DecisionMaker
 
             var actual = situationDecider.CalculateSituation();
 
-            Assert.AreEqual(SituationType.FacingRaise, actual);
+            Assert.AreEqual(SituationType.FacingRaise, actual.Situation);
         }
     }
 }

@@ -8,6 +8,6 @@ namespace Poker.Logic
     {
         List<ActionEvent> ActionEventList { get; set; }
         PositionType Position { get; set; }
-        List<SituationRule> SituationRules { get; set; }
+        List<ISituationRule> SituationRules { get; set; }
     }
 }

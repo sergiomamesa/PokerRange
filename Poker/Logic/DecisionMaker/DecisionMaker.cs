@@ -12,52 +12,52 @@ namespace Poker.Logic
         private readonly List<ActionEvent> ActionEventList;
         private readonly PositionType HeroPosition;
 
-        public TableRange HeroRange { get; private set; }
-        public TableRange VillainRange { get; private set; }
-        public ActionType HeroAction { get; private set; }
+        public DecisionMakerResult Result { get; set; }
 
         public DecisionMaker(List<ActionEvent> actionEventList, PositionType heroPosition)
         {
             ActionEventList = actionEventList;
             HeroPosition = heroPosition;
-        }
-
-        private void HeroResult(Hand hand)
-        {
-            var fileReaderFactoryParams = new FileReaderFactoryParams()
-            {
-                Situation = new HeroSituationDecider(ActionEventList, HeroPosition).CalculateSituation(),
-                HeroPosition = HeroPosition,
-                VillainPosition = new VillainPositionDecider(ActionEventList, HeroPosition).CalculateVillainPosition()
-            };
-
-            var fileReader = new FileReaderFactory().CreateInstance(fileReaderFactoryParams);
-            HeroRange = fileReader.GetRange(new ActionParser());
-            HeroAction = HeroRange.GetAction(hand);
-        }
-
-        private void VillainResult()
-        {
-            var heroSituation = new HeroSituationDecider(ActionEventList, HeroPosition).CalculateSituation();
-            if (heroSituation == SituationType.RaiseFirstIn)
-                return;
-
-            var villainPosition = new VillainPositionDecider(ActionEventList, HeroPosition).CalculateVillainPosition();
-            var fileReaderFactoryParams = new FileReaderFactoryParams()
-            {
-                Situation = new VillainSituationDecider(ActionEventList, villainPosition).CalculateSituation(),
-                HeroPosition = villainPosition,
-                VillainPosition = HeroPosition
-            };
-
-            var fileReader = new FileReaderFactory().CreateInstance(fileReaderFactoryParams);
-            VillainRange = fileReader.GetRange(new ActionParser());
+            Result = new DecisionMakerResult();
         }
 
         public void Run(Hand heroHand)
         {
-            HeroResult(heroHand);
-            VillainResult();
+            var heroSituationResult = new HeroSituationDecider(ActionEventList, HeroPosition).CalculateSituation();
+            var villainSituationResult = new VillainSituationDecider(ActionEventList, HeroPosition).CalculateSituation();
+
+            HeroRun(heroHand, heroSituationResult, villainSituationResult);
+            VillainRun(heroSituationResult, villainSituationResult);
+        }
+
+        private void HeroRun(Hand heroHand, SituationDeciderResult heroSituationResult, SituationDeciderResult villainPositionResult)
+        {
+            var fileReaderFactoryParamsHero = new FileReaderFactoryParams()
+            {
+                Situation = heroSituationResult.Situation,
+                HeroPosition = HeroPosition,
+                VillainPosition = villainPositionResult.Position
+            };
+
+            var fileReaderHero = new FileReaderFactory().CreateInstance(fileReaderFactoryParamsHero);
+            Result.HeroRange = fileReaderHero.GetRange(new ActionParser());
+            Result.HeroAction = Result.HeroRange.GetAction(heroHand);
+        }
+
+        private void VillainRun(SituationDeciderResult heroSituationResult, SituationDeciderResult villainSituationResult)
+        {
+            if (heroSituationResult.Situation == SituationType.RaiseFirstIn)
+                return;
+
+            var fileReaderFactoryParamsVillain = new FileReaderFactoryParams()
+            {
+                Situation = villainSituationResult.Situation,
+                HeroPosition = villainSituationResult.Position,
+                VillainPosition = HeroPosition
+            };
+
+            var fileReaderVillain = new FileReaderFactory().CreateInstance(fileReaderFactoryParamsVillain);
+            Result.VillainRange = fileReaderVillain.GetRange(new ActionParser());
         }
     }
 }

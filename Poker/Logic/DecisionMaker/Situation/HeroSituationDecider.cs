@@ -14,7 +14,7 @@ namespace Poker.Logic
 
         public override void SetSituationRules()
         {
-            SituationRules = SituationRulesGenerator.HeroRules();
+            SituationRules = new SituationRulesGenerator().HeroRules();
         }
     }
 }

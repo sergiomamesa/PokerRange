@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Poker.Logic
 {
-    public class SituationRule
+    public interface ISituationRule
     {
-       public Func<List<ActionEvent>, PositionType, bool> Condition { get; set; }
-       public SituationType Result { get; set; }
+       Func<List<ActionEvent>, PositionType, bool> Condition { get; set; }
+       Func<List<ActionEvent>,PositionType, SituationDeciderResult> Result { get; set; }
     }
 }

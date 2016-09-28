@@ -27,7 +27,7 @@ namespace Ranges
         {
             var leftRank = hand.LeftCard.Rank;
             var rightRank = hand.RightCard.Rank;
-            
+
             var found = MatchColumnRow(rightRank, leftRank);
             if (!found)
                 found = MatchColumnRow(leftRank, rightRank);
@@ -56,8 +56,10 @@ namespace Ranges
 
         public override string ToString()
         {
-            return Action.ToString();
-            //return String.Format("{0} {1} {2} {3}", ColumnRankType, RowRankType, IsSuited, Action);
+            var rightRank = Math.Min((int)ColumnRankType, (int)RowRankType);
+            var leftRank = Math.Max((int)ColumnRankType, (int)RowRankType);
+
+            return String.Format("{0} {1} {2} {3}", (RankType)rightRank, (RankType)leftRank, IsSuited, Action);
         }
     }
 }

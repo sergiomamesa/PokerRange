@@ -47,9 +47,9 @@ namespace Poker.Logic
 
             var result = new DecisionMakerResult()
             {
-                HeroAction = decisionMaker.HeroAction,
-                HeroRange = decisionMaker.HeroRange,
-                VillainRange = decisionMaker.VillainRange
+                HeroAction = decisionMaker.Result.HeroAction,
+                HeroRange = decisionMaker.Result.HeroRange,
+                VillainRange = decisionMaker.Result.VillainRange
             };
 
             return result;

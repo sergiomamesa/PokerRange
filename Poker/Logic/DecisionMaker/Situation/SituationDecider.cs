@@ -12,7 +12,7 @@ namespace Poker.Logic
     {
         public List<ActionEvent> ActionEventList { get; set; }
         public PositionType Position { get; set; }
-        public List<SituationRule> SituationRules { get; set; }
+        public List<ISituationRule> SituationRules { get; set; }
 
         public SituationDecider(List<ActionEvent> actionEventList, PositionType position)
         {
@@ -22,14 +22,14 @@ namespace Poker.Logic
 
         public abstract void SetSituationRules();
 
-        public SituationType CalculateSituation()
+        public SituationDeciderResult CalculateSituation()
         {
             SetSituationRules();
 
             foreach (var rule in SituationRules)
             {
                 if (rule.Condition(ActionEventList, Position))
-                    return rule.Result;
+                    return rule.Result(ActionEventList, Position);
             }
 
             throw new Exception("None of the rules match this situation");

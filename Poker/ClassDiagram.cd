@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Poker.Extensions.ExtensionMethods" Collapsed="true">
+    <Position X="10.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Extensions\ExtensionMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Poker.Logic.DecisionMaker" Collapsed="true">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAQAAABAAAAEAAAAAEAAAAI=</HashCode>
+      <FileName>Logic\DecisionMaker\DecisionMaker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Poker.Logic.DecisionMakerResult" Collapsed="true">
+    <Position X="8.75" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAQAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\DecisionMaker\DecisionMakerResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Poker.Logic.HeroSituationDecider" Collapsed="true">
+    <Position X="4.75" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\DecisionMaker\Situation\HeroSituationDecider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Poker.Logic.SituationDecider" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAIgAAAIAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\DecisionMaker\Situation\SituationDecider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Poker.Logic.SituationDeciderResult" Collapsed="true">
+    <Position X="7.75" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Logic\DecisionMaker\Situation\SituationDeciderResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Poker.Logic.FacingRaiseHeroRule" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\DecisionMaker\Situation\SituationRules\HeroRules\FacingRaiseHeroRule.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Poker.Logic.RFIHeroRule" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\DecisionMaker\Situation\SituationRules\HeroRules\RFIHeroRule.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Poker.Logic.RFIvs3BetHeroRule" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.5" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\DecisionMaker\Situation\SituationRules\HeroRules\RFIvs3BetHeroRule.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Poker.Logic.SituationRulesGenerator" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Logic\DecisionMaker\Situation\SituationRules\SituationRulesGenerator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Rules" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Poker.Logic.NoVillainRule" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\DecisionMaker\Situation\SituationRules\VillainRules\NoVillainRule.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Poker.Logic.RaiseFirstInVillainRule" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.5" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\DecisionMaker\Situation\SituationRules\VillainRules\RaiseFirstInVillainRule.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.212" />
+  </Class>
+  <Class Name="Poker.Logic.RFIvs3BetVillainRule" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\DecisionMaker\Situation\SituationRules\VillainRules\RFIvs3BetVillainRule.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Poker.Logic.VillainSituationDecider" Collapsed="true">
+    <Position X="2.25" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\DecisionMaker\Situation\VillainSituationDecider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Poker.Logic.ScenarioGenerator" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAQAAAgAAAAAAAQAAAAAAAAAAAAABAAAAwAAI=</HashCode>
+      <FileName>Logic\ScenarioGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Poker.Logic.TableFactory" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\TableFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Poker.Model.ActionEvent" Collapsed="true">
+    <Position X="7" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Model\ActionEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Poker.Model.Board" Collapsed="true">
+    <Position X="9" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAgAAAAACAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Board.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ThirdCard" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Poker.Model.Card" Collapsed="true">
+    <Position X="9" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Card.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Poker.Model.Deck" Collapsed="true">
+    <Position X="5" Y="6.5" Width="1.5" />
+    <AssociationLine Name="Cards" Type="Poker.Model.Card" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.062" />
+        <Point X="6.25" Y="7.3" />
+        <Point X="9.75" Y="7.3" />
+        <Point X="9.75" Y="7.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Deck.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Cards" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Poker.Model.Hand" Collapsed="true">
+    <Position X="11.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAABIAAAAAA=</HashCode>
+      <FileName>Model\Hand.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LeftCard" />
+      <Property Name="RightCard" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Poker.Model.Player" Collapsed="true">
+    <Position X="11.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Model\Player.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Hand" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Poker.Model.Seat" Collapsed="true">
+    <Position X="9" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Model\Seat.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Player" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Poker.Model.Table" Collapsed="true">
+    <Position X="3" Y="6.5" Width="1.5" />
+    <AssociationLine Name="Seats" Type="Poker.Model.Seat" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.812" Y="6.5" />
+        <Point X="3.812" Y="5.906" />
+        <Point X="9.75" Y="5.906" />
+        <Point X="9.75" Y="6.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Table.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="Seats" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Poker.Ranges.Parser.ActionFilterParser" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Ranges\Parser\ActionFilterParser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Poker.Ranges.Parser.ActionParser" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ranges\Parser\ActionParser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Ranges.Reader.FileReader" Collapsed="true">
+    <Position X="4.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAABAAAA=</HashCode>
+      <FileName>Ranges\Reader\FileReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Poker.Ranges.Reader.FileReaderFactory" Collapsed="true">
+    <Position X="2.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ranges\Reader\FileReaderFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Poker.Ranges.Reader.FileReaderFactoryParams" Collapsed="true">
+    <Position X="0.5" Y="8.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAABAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Ranges\Reader\FileReaderFactoryParams.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ranges.TableCell" Collapsed="true">
+    <Position X="2.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACABAAAEAAAAAAAAAAAIAAAAAAAAIAAgAAQ=</HashCode>
+      <FileName>Ranges\Tables\TableCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ranges.TableRange" Collapsed="true">
+    <Position X="4.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAEAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ranges\Tables\TableRange.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="Cells" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Interface Name="Poker.Logic.ISituationDecider" Collapsed="true">
+    <Position X="0.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\DecisionMaker\Situation\ISituationDecider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Poker.Logic.ISituationRule" Collapsed="true">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\DecisionMaker\Situation\SituationRules\ISituationRule.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Poker.Ranges.Parser.IActionParser" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ranges\Parser\IActionParser.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Poker.Model.Enums.ActionType" Collapsed="true">
+    <Position X="0.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAABAAAIAAAQAAAAAAAAAAAAAAAACAAgEAIAA=</HashCode>
+      <FileName>Model\Enums\ActionType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Poker.Model.Enums.BoardStateType" Collapsed="true">
+    <Position X="2.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAACAAEEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Enums\BoardStateType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Poker.Model.Enums.PokerHands" Collapsed="true">
+    <Position X="4" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAgkAAAAAAAAEBAAAAAAAAAAAAgAAAAAIAgA=</HashCode>
+      <FileName>Model\Enums\PokerHands.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Poker.Model.Enums.PositionType" Collapsed="true">
+    <Position X="5.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAgAAAAAAAIAAAAAAAAAQCAAgAAIIAAAAgAAAAAAg=</HashCode>
+      <FileName>Model\Enums\PositionType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Poker.Model.Enums.RankType" Collapsed="true">
+    <Position X="7.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAggAAAEAAEAIAAAAAFBAAAAAgAAAgAAEE=</HashCode>
+      <FileName>Model\Enums\RankType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Poker.Model.Enums.SituationType" Collapsed="true">
+    <Position X="9.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAACAAAAEAA=</HashCode>
+      <FileName>Model\Enums\SituationType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Poker.Model.Enums.SuitType" Collapsed="true">
+    <Position X="12.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAEAAAAAAAAABAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Model\Enums\SuitType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Poker.Model.Enums.TableType" Collapsed="true">
+    <Position X="11" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAEAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Enums\TableType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

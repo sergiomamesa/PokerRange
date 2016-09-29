@@ -9,8 +9,8 @@ namespace Poker.Ranges.Parser
 {
     public class ActionFilterParser : IActionParser
     {
-        private ActionType Action;
-        private IActionParser ActionParser;
+        private readonly ActionType Action;
+        private readonly IActionParser ActionParser;
 
         public ActionFilterParser(ActionType action)
         {

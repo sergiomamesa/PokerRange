@@ -16,7 +16,17 @@ namespace Poker.Logic
 
         public RFIvs3BetHeroRule()
         {
-            Condition = (list, position) => list.Where(a => a.Action == ActionType.Raise).IsOne(p => p.Position == position);
+            Condition = (list, position) =>
+            {
+                var listRaises = list.Where(a => a.Action == ActionType.Raise);
+                if (listRaises.Count() != 2)
+                    return false;
+
+                if (listRaises.First().Position == position)
+                    return true;
+
+                return false;
+            };
             Result = (list, position) => new SituationDeciderResult()
             {
                 Situation = SituationType.RFIvs3Bet,

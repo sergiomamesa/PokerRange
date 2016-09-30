@@ -8,11 +8,11 @@ using Poker.Model.Enums;
 
 namespace Poker.Logic
 {
-    public abstract class SituationDecider : ISituationDecider
+    public abstract class SituationDecider
     {
-        public List<ActionEvent> ActionEventList { get; set; }
-        public PositionType Position { get; set; }
-        public List<ISituationRule> SituationRules { get; set; }
+        private List<ActionEvent> ActionEventList { get; set; }
+        private PositionType Position { get; set; }
+        protected List<ISituationRule> SituationRules { get; set; }
 
         public SituationDecider(List<ActionEvent> actionEventList, PositionType position)
         {
@@ -20,7 +20,7 @@ namespace Poker.Logic
             Position = position;
         }
 
-        public abstract void SetSituationRules();
+        protected abstract void SetSituationRules();
 
         public SituationDeciderResult CalculateSituation()
         {

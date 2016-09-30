@@ -10,7 +10,7 @@ namespace Poker.Logic
 {
     public class ScenarioGenerator
     {
-        public Table Table { get; set; }
+        private Table Table { get; set; }
         public Deck Deck = new Deck();
         private List<ActionEvent> ActionEventList { get; set; }
         private BoardStateType BoardState { get; set; }
@@ -34,6 +34,18 @@ namespace Poker.Logic
             seat.Player.Hand = hand;
         }
 
+        public void RemovePlayer(PositionType position)
+        {
+            var seat = Table.Seats.FirstOrDefault(i => i.PositionType == position);
+            if (seat == null)
+                return;
+
+            var list = Table.Seats.SkipWhile(s => s != seat).Skip(1).ToList();
+            list.ForEach(s => s.PositionType = s.PositionType - 1);
+
+            //TODO: Test this!
+        }
+
         public void AddAction(PositionType position, ActionType action)
         {
             ActionEventList.Add(new ActionEvent(position, action));
@@ -43,15 +55,8 @@ namespace Poker.Logic
         {
             var hero = Table.Seats.FirstOrDefault(s => s.Player.IsHero);
             var decisionMaker = new DecisionMaker(ActionEventList, hero.PositionType);
-            decisionMaker.Run(hero.Player.Hand);
 
-            var result = new DecisionMakerResult()
-            {
-                HeroAction = decisionMaker.Result.HeroAction,
-                HeroRange = decisionMaker.Result.HeroRange,
-                VillainRange = decisionMaker.Result.VillainRange
-            };
-
+            var result = decisionMaker.Run(hero.Player.Hand);
             return result;
         }
     }

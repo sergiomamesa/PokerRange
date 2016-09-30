@@ -70,13 +70,16 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Logic\DecisionMaker\DecisionMakerTests.cs" />
     <Compile Include="Logic\DecisionMaker\Situation\HeroSituationDeciderTests.cs" />
     <Compile Include="Logic\DecisionMaker\Situation\SituationRules\HeroRules\FacingRaiseHeroRuleTests.cs" />
     <Compile Include="Logic\DecisionMaker\Situation\SituationRules\HeroRules\RFIHeroRuleTests.cs" />
     <Compile Include="Logic\DecisionMaker\Situation\SituationRules\HeroRules\RFIvs3BetHeroRuleTests.cs" />
+    <Compile Include="Logic\DecisionMaker\Situation\SituationRules\SituationRulesGeneratorTests.cs" />
+    <Compile Include="Logic\DecisionMaker\Situation\SituationRules\VillainRules\NoVillainRuleTests.cs" />
     <Compile Include="Logic\DecisionMaker\Situation\SituationRules\VillainRules\RaiseFirstInVillainRuleTests.cs" />
+    <Compile Include="Logic\DecisionMaker\Situation\SituationRules\VillainRules\RFIvs3BetVillainRuleTests.cs" />
     <Compile Include="Logic\DecisionMaker\Situation\VillainSituationDeciderTests.cs" />
+    <Compile Include="Logic\TableFactoryTests.cs" />
     <Compile Include="Model\SeatTests.cs" />
     <Compile Include="Model\TableTests.cs" />
     <Compile Include="Ranges\Tables\TableRangeTests.cs" />

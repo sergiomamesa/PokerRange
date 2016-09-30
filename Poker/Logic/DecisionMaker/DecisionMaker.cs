@@ -12,7 +12,7 @@ namespace Poker.Logic
         private readonly List<ActionEvent> ActionEventList;
         private readonly PositionType HeroPosition;
 
-        public DecisionMakerResult Result { get; set; }
+        private DecisionMakerResult Result { get; set; }
 
         public DecisionMaker(List<ActionEvent> actionEventList, PositionType heroPosition)
         {
@@ -21,13 +21,15 @@ namespace Poker.Logic
             Result = new DecisionMakerResult();
         }
 
-        public void Run(Hand heroHand)
+        public DecisionMakerResult Run(Hand heroHand)
         {
             var heroSituationResult = new HeroSituationDecider(ActionEventList, HeroPosition).CalculateSituation();
             var villainSituationResult = new VillainSituationDecider(ActionEventList, HeroPosition).CalculateSituation();
 
             HeroRun(heroHand, heroSituationResult, villainSituationResult);
             VillainRun(heroSituationResult, villainSituationResult);
+
+            return Result;
         }
 
         private void HeroRun(Hand heroHand, SituationDeciderResult heroSituationResult, SituationDeciderResult villainPositionResult)

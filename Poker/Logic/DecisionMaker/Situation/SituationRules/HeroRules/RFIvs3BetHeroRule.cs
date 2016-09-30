@@ -22,10 +22,7 @@ namespace Poker.Logic
                 if (listRaises.Count() != 2)
                     return false;
 
-                if (listRaises.First().Position == position)
-                    return true;
-
-                return false;
+                return listRaises.First().Position == position;
             };
             Result = (list, position) => new SituationDeciderResult()
             {

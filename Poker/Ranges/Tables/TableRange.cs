@@ -25,22 +25,9 @@ namespace Ranges
 
         public override string ToString()
         {
-            int iterator = 0;
             var builder = new StringBuilder();
-            foreach (RankType columnRank in Enum.GetValues(typeof(RankType)))
-            {
-                builder.Append(columnRank.ToString());
-                builder.Append("|");
-                foreach (RankType rowRank in Enum.GetValues(typeof(RankType)))
-                {
-                    builder.Append(Cells[iterator].ToString());
-                    builder.Append("|");
-                    iterator++;
-                }
-                builder.Append(Environment.NewLine);
-                builder.Append("------------------------------------------------");
-                builder.Append(Environment.NewLine);
-            }
+            Cells.ForEach(c => builder.AppendLine(c.ToString()));
+
             return builder.ToString();
         }
     }

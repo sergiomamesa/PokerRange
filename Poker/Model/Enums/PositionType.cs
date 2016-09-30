@@ -11,6 +11,6 @@
         UTGplus2,
         UTGplus1,
         UTG,
-        NoSeat
+        Empty
     }
 }

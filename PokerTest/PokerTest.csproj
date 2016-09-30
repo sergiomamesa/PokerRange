@@ -80,6 +80,7 @@
     <Compile Include="Logic\DecisionMaker\Situation\SituationRules\VillainRules\RFIvs3BetVillainRuleTests.cs" />
     <Compile Include="Logic\DecisionMaker\Situation\VillainSituationDeciderTests.cs" />
     <Compile Include="Logic\TableFactoryTests.cs" />
+    <Compile Include="Logic\ScenarioGeneratorTests.cs" />
     <Compile Include="Model\SeatTests.cs" />
     <Compile Include="Model\TableTests.cs" />
     <Compile Include="Ranges\Tables\TableRangeTests.cs" />

@@ -10,7 +10,7 @@ namespace Poker.Logic
 {
     public class ScenarioGenerator
     {
-        private Table Table { get; set; }
+        public Table Table { get; set; }
         public Deck Deck = new Deck();
         private List<ActionEvent> ActionEventList { get; set; }
         private BoardStateType BoardState { get; set; }
@@ -38,12 +38,12 @@ namespace Poker.Logic
         {
             var seat = Table.Seats.FirstOrDefault(i => i.PositionType == position);
             if (seat == null)
-                return;
+                throw new Exception("Not valid seat position for this table.");
+
+            seat.PositionType = PositionType.Empty;
 
             var list = Table.Seats.SkipWhile(s => s != seat).Skip(1).ToList();
             list.ForEach(s => s.PositionType = s.PositionType - 1);
-
-            //TODO: Test this!
         }
 
         public void AddAction(PositionType position, ActionType action)

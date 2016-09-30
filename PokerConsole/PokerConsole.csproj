@@ -47,9 +47,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Poker\Poker.csproj">
       <Project>{7da0ab4b-2710-4d79-8b61-86c4d87a6a68}</Project>
       <Name>Poker</Name>

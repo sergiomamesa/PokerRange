@@ -17,11 +17,10 @@ namespace Poker.Logic
             Condition = (list, position) =>
             {
                 var raiseList = list.Where(i => i.Action == ActionType.Raise);
-                if (raiseList.Count() == 3)
-                    if (raiseList.IsOne(i => i.Position == position))
-                        return true;
+                if (raiseList.Count() != 3)
+                    return false;
 
-                return false;
+                return raiseList.IsOne(i => i.Position == position);
             };
 
             Result = (list, position) => new SituationDeciderResult()
